@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atividade 2 — Nosso município | RioRio</title>
+  <meta name="description" content="Atividade interativa: arraste nomes, números e contornos para o mapa do município do Rio de Janeiro." />
+  <meta name="theme-color" content="#0E7C8B" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/atividades.css?v=4" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo" data-header>
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html" aria-label="RioRio — página inicial">
+        <span class="brand__mark" aria-hidden="true">RioRio</span>
+        <span class="brand__tag">Cidade do Rio para estudantes</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="nav__toggle-label">Menu</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li class="nav__cta-item"><a class="btn btn--pink btn--sm" href="index.html#escolas">Adote na sua escola</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="ativ-main">
+      <div class="wrap">
+        <p class="ativ-crumbs">
+          <a href="index.html">RioRio</a> ›
+          <a href="index.html#atividades">Atividades</a> ›
+          <span>Atividade 2</span>
+        </p>
+
+        <div class="ativ-hero">
+          <div>
+            <p class="ativ-hero__kicker">Resumo da história do Rio · Atividade 2</p>
+            <h1 class="ativ-hero__title">Nosso município</h1>
+          </div>
+          <nav class="ativ-nav" aria-label="Navegação entre atividades">
+            <a href="atividade-1.html">← Atividade anterior</a>
+            <a href="atividade-3.html">Próxima atividade →</a>
+          </nav>
+        </div>
+
+        <div class="ativ-intro">
+          <p><strong>Atividade 1:</strong> Nesta página, vemos o mapa do nosso município do Rio de Janeiro. Arraste cada nome da lista para o local correto no mapa.</p>
+          <p><strong>Atividade 2:</strong> Vemos também o nome dos três maciços da nossa cidade. Arraste o contorno de cada maciço para o lugar correto no mapa. Aliás, você sabe o que é um maciço?</p>
+          <p><strong>Atividade 3:</strong> Depois de posicionar os contornos, arraste o número do nome de cada maciço, da relação abaixo, para o lugar correspondente no mapa.</p>
+        </div>
+
+        <div class="ativ-panel" data-drag-activity>
+          <h2>Mapa do município do Rio de Janeiro</h2>
+          <div class="ativ-stage-scroll">
+            <div class="ativ-stage" style="width:990px;height:521px;background-image:url('assets/images/atividades/atividade-1-2.jpg')">
+              <span class="drop-zone is-visible-hint" data-drop="guanabara" style="left:752px;top:101px;width:140px;height:22px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="atlantico" style="left:743px;top:433px;width:140px;height:22px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="sepetiba" style="left:24px;top:400px;width:140px;height:22px"></span>
+
+              <span class="drop-zone is-visible-hint" data-drop="num-gericino" style="left:129px;top:45px;width:34px;height:34px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="num-tijuca" style="left:490px;top:78px;width:34px;height:34px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="num-pedrabranca" style="left:326px;top:37px;width:34px;height:34px"></span>
+
+              <span class="drop-zone" data-drop="shape-gericino" style="left:255px;top:256px;width:274px;height:246px"></span>
+              <span class="drop-zone" data-drop="shape-tijuca" style="left:238px;top:102px;width:241px;height:131px"></span>
+              <span class="drop-zone" data-drop="shape-pedrabranca" style="left:547px;top:275px;width:204px;height:165px"></span>
+            </div>
+          </div>
+
+          <div class="ativ-bank">
+            <div class="ativ-bank__group">
+              <h3>Arraste cada nome</h3>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="guanabara" style="position:relative">BAÍA DE GUANABARA</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="atlantico" style="position:relative">OCEANO ATLÂNTICO</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="sepetiba" style="position:relative">BAÍA DE SEPETIBA</span></div>
+            </div>
+            <div class="ativ-bank__group">
+              <h3>Arraste o número de cada maciço</h3>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-gericino" style="position:relative">1</span><span class="ativ-bank__label">Maciço de Gericinó</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-tijuca" style="position:relative">2</span><span class="ativ-bank__label">Maciço da Tijuca</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-pedrabranca" style="position:relative">3</span><span class="ativ-bank__label">Maciço da Pedra Branca</span></div>
+            </div>
+            <div class="ativ-bank__group">
+              <h3>Arraste cada contorno</h3>
+              <div class="ativ-bank__row">
+                <span class="drag-item drag-item--shape" data-drag="shape-gericino" style="position:relative;width:140px;height:126px;background-image:url('assets/images/atividades/macico1.png');background-size:contain"></span>
+                <span class="drag-item drag-item--shape" data-drag="shape-tijuca" style="position:relative;width:140px;height:76px;background-image:url('assets/images/atividades/macico2.png');background-size:contain"></span>
+                <span class="drag-item drag-item--shape" data-drag="shape-pedrabranca" style="position:relative;width:140px;height:113px;background-image:url('assets/images/atividades/macico3.png');background-size:contain"></span>
+              </div>
+            </div>
+          </div>
+
+          <p class="ativ-success" data-ativ-success>Muito bem! Você completou a atividade 2.</p>
+          <div class="ativ-actions">
+            <button class="btn btn--ghost" type="button" data-ativ-reset>Refazer atividade</button>
+          </div>
+        </div>
+
+        <nav class="ativ-nav" aria-label="Navegação entre atividades" style="justify-content:flex-end;background:transparent;padding:0">
+          <a href="atividade-1.html" style="background:var(--papel-2);color:var(--tinta)">← Atividade anterior</a>
+          <a href="atividade-3.html" style="background:var(--ciano);color:#fff">Próxima atividade →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">RioRio</span>
+        <p>A história da Cidade do Rio de Janeiro em quadrinhos: 1500–2000.</p>
+        <p class="handnote site-footer__motto">Conhecer para amar. Amar para preservar.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#escolas">Para escolas</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2>Contato</h2>
+        <p>RESTAURO — Editora, Pesquisas e Projetos</p>
+        <p>Av. Treze de Maio, 23/301, Centro<br>Rio de Janeiro / RJ · CEP 20031-902</p>
+        <p><a href="https://wa.me/5521993195634" target="_blank" rel="noopener">WhatsApp (21) 99319-5634</a></p>
+        <p><a href="mailto:restauro.malba@gmail.com">restauro.malba@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="wrap site-footer__base">
+      <p>Autoria e desenhos: Renata de Faria Pereira · Editora RESTAURO.</p>
+      <p>© <span data-year>2026</span> RioRio · RESTAURO — Editora, Pesquisas e Projetos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=4" defer></script>
+  <script src="assets/js/atividades.js?v=4" defer></script>
+</body>
+</html>

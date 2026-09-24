@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atividade 4 — O município do Rio e as vias principais | RioRio</title>
+  <meta name="description" content="Atividade interativa: arraste o nome de cada via expressa para a legenda correta do mapa do Rio de Janeiro." />
+  <meta name="theme-color" content="#0E7C8B" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/atividades.css?v=4" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo" data-header>
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html" aria-label="RioRio — página inicial">
+        <span class="brand__mark" aria-hidden="true">RioRio</span>
+        <span class="brand__tag">Cidade do Rio para estudantes</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="nav__toggle-label">Menu</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li class="nav__cta-item"><a class="btn btn--pink btn--sm" href="index.html#escolas">Adote na sua escola</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="ativ-main">
+      <div class="wrap">
+        <p class="ativ-crumbs">
+          <a href="index.html">RioRio</a> ›
+          <a href="index.html#atividades">Atividades</a> ›
+          <span>Atividade 4</span>
+        </p>
+
+        <div class="ativ-hero">
+          <div>
+            <p class="ativ-hero__kicker">Resumo da história do Rio · Atividade 4</p>
+            <h1 class="ativ-hero__title">O município do Rio e as principais vias</h1>
+          </div>
+          <nav class="ativ-nav" aria-label="Navegação entre atividades">
+            <a href="atividade-3.html">← Atividade anterior</a>
+            <a href="atividade-5.html">Próxima atividade →</a>
+          </nav>
+        </div>
+
+        <div class="ativ-intro">
+          <p>No mapa abaixo vemos, em destaque, onde a nossa cidade do Rio de Janeiro foi fundada, em 1565, e onde ela começou a crescer, a partir de 1567. Vemos também a indicação das principais vias expressas que cruzam o município e as linhas de trem.</p>
+          <p>Analise o mapa, faça uma pesquisa em outros mapas e descubra o nome de cada via indicada na legenda. Depois, arraste o nome de cada via para o retângulo correspondente da legenda.</p>
+        </div>
+
+        <div class="ativ-panel">
+          <h2>Mapa do município e as vias expressas</h2>
+          <figure style="margin:0 0 1.4rem">
+            <img src="assets/images/atividades/atividade-1-4.jpg" alt="Mapa do município do Rio de Janeiro com a fundação, a expansão e as principais vias expressas em destaque." style="width:100%;border-radius:12px;box-shadow:var(--shadow-sm)" width="990" height="526" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="ativ-panel" data-drag-activity>
+          <h2>Legenda: arraste o nome de cada via</h2>
+          <div class="ativ-stage-scroll">
+            <div class="ativ-stage" style="width:300px;height:150px;background-image:url('assets/images/atividades/atividade-1-4-legendas.png');background-size:102px 116px;background-repeat:no-repeat">
+              <span class="drop-zone is-visible-hint" data-drop="brasil" style="left:106px;top:31px;width:138px;height:25px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="amarela" style="left:106px;top:61px;width:138px;height:25px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="vermelha" style="left:106px;top:91px;width:138px;height:25px"></span>
+              <span class="drop-zone is-visible-hint" data-drop="trem" style="left:106px;top:121px;width:138px;height:25px"></span>
+            </div>
+          </div>
+
+          <div class="ativ-bank">
+            <div class="ativ-bank__group">
+              <h3>Nome das vias</h3>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="brasil" style="position:relative">AVENIDA BRASIL</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="amarela" style="position:relative">LINHA AMARELA</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="vermelha" style="position:relative">LINHA VERMELHA</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="trem" style="position:relative">LINHAS DE TREM</span></div>
+            </div>
+          </div>
+
+          <p class="ativ-success" data-ativ-success>Muito bem! Você completou a atividade 4.</p>
+          <div class="ativ-actions">
+            <button class="btn btn--ghost" type="button" data-ativ-reset>Refazer atividade</button>
+          </div>
+        </div>
+
+        <nav class="ativ-nav" aria-label="Navegação entre atividades" style="justify-content:flex-end;background:transparent;padding:0">
+          <a href="atividade-3.html" style="background:var(--papel-2);color:var(--tinta)">← Atividade anterior</a>
+          <a href="atividade-5.html" style="background:var(--ciano);color:#fff">Próxima atividade →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">RioRio</span>
+        <p>A história da Cidade do Rio de Janeiro em quadrinhos: 1500–2000.</p>
+        <p class="handnote site-footer__motto">Conhecer para amar. Amar para preservar.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#escolas">Para escolas</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2>Contato</h2>
+        <p>RESTAURO — Editora, Pesquisas e Projetos</p>
+        <p>Av. Treze de Maio, 23/301, Centro<br>Rio de Janeiro / RJ · CEP 20031-902</p>
+        <p><a href="https://wa.me/5521993195634" target="_blank" rel="noopener">WhatsApp (21) 99319-5634</a></p>
+        <p><a href="mailto:restauro.malba@gmail.com">restauro.malba@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="wrap site-footer__base">
+      <p>Autoria e desenhos: Renata de Faria Pereira · Editora RESTAURO.</p>
+      <p>© <span data-year>2026</span> RioRio · RESTAURO — Editora, Pesquisas e Projetos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=4" defer></script>
+  <script src="assets/js/atividades.js?v=4" defer></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* =========================================================
+   ATIVIDADES DA ESCOLA — páginas de jogos (atividade-1..5)
+   Reaproveita as variáveis e fontes de styles.css.
+   ========================================================= */
+
+.ativ-main{ padding:clamp(1.5rem,4vw,3rem) 0 clamp(3rem,6vw,5rem); background:var(--papel); }
+
+.ativ-crumbs{
+  display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;
+  font-size:.85rem; font-weight:600; color:var(--tinta-70); margin-bottom:1rem;
+}
+.ativ-crumbs a{ color:var(--ciano-esc); text-decoration:none; }
+.ativ-crumbs a:hover{ text-decoration:underline; }
+
+.ativ-hero{
+  background:var(--ciano); color:#fff; border-radius:var(--radius-lg);
+  padding:1.4rem clamp(1.2rem,3vw,2rem); margin-bottom:1.4rem;
+  display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;
+}
+.ativ-hero__kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; margin:0 0 .25rem; }
+.ativ-hero__title{ font-family:var(--ff-display); font-size:clamp(1.3rem,1rem + 1.4vw,1.9rem); margin:0; }
+
+.ativ-nav{ display:flex; flex-wrap:wrap; gap:.6rem; }
+.ativ-nav a{
+  display:inline-flex; align-items:center; gap:.4rem; padding:.5rem .9rem; border-radius:999px;
+  background:rgba(255,255,255,.16); color:#fff; text-decoration:none; font-weight:600; font-size:.85rem;
+  transition:background .2s;
+}
+.ativ-nav a:hover{ background:rgba(255,255,255,.3); }
+.ativ-nav a[aria-disabled="true"]{ opacity:.4; pointer-events:none; }
+
+.ativ-intro{
+  display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  margin-bottom:1.4rem;
+}
+.ativ-intro p{
+  margin:0; background:#d9f7fa; border-radius:var(--radius-lg);
+  padding:1.1rem 1.3rem; color:#0a5a66; line-height:1.55; font-weight:600;
+}
+.ativ-intro strong{ color:#c11f5b; }
+
+/* --- painel amarelo de respostas, igual ao site original --- */
+.ativ-answers{ background:#fff9cc; border-radius:var(--radius-lg); padding:1.2rem 1.4rem; margin-bottom:1.4rem; }
+.ativ-answers__grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:.9rem 1.6rem; }
+.ativ-answers__row{ display:flex; align-items:center; gap:.7rem; }
+.ativ-answers__label{ font-weight:700; text-transform:uppercase; font-size:.82rem; color:#a20336; letter-spacing:.01em; }
+
+.ativ-panel{
+  background:#fff; border:1px solid var(--linha); border-radius:var(--radius-lg);
+  padding:clamp(1.2rem,3vw,1.8rem); margin-bottom:1.4rem;
+}
+.ativ-panel h2{
+  font-family:var(--ff-display); font-size:1.15rem; color:var(--rosa); margin:0 0 1rem;
+  text-transform:uppercase; letter-spacing:.02em;
+}
+
+/* --- banco de peças arrastáveis (fora do mapa) --- */
+.ativ-bank{ display:flex; flex-wrap:wrap; gap:.6rem 1rem; margin-bottom:1.4rem; }
+.ativ-bank__group{
+  position:relative; background:#fff; border:1px solid var(--linha); border-radius:var(--radius-lg);
+  padding:1rem 1.2rem; flex:1 1 260px;
+}
+.ativ-bank__group h3{ margin:0 0 .7rem; font-size:.95rem; color:var(--azul); }
+.ativ-bank__row{ display:flex; align-items:center; gap:.6rem; min-height:2.4rem; margin-bottom:.5rem; }
+.ativ-bank__row:last-child{ margin-bottom:0; }
+.ativ-bank__label{ font-size:.92rem; color:var(--tinta-70); }
+
+/* --- palco: mapa + peças posicionadas em px, igual ao original --- */
+.ativ-stage-scroll{ overflow-x:auto; border-radius:var(--radius-lg); background:#eef2f0; padding:.6rem; }
+.ativ-stage-scroll.is-dragging-active{ overflow:visible; }
+.ativ-stage{
+  position:relative; margin:0 auto; background-repeat:no-repeat; background-position:center;
+  background-size:cover; border-radius:12px; box-shadow:var(--shadow-sm);
+}
+
+.drag-item{
+  position:absolute; display:inline-block; cursor:grab; touch-action:none; vertical-align:top;
+  -webkit-user-select:none; -webkit-touch-callout:none; user-select:none;
+}
+.drag-item.is-dragging{ cursor:grabbing; filter:drop-shadow(0 6px 10px rgba(0,0,0,.25)); }
+.drag-item.is-locked{ cursor:default; }
+
+.drag-item--chip{
+  padding:.35rem .7rem; border-radius:8px; background:#fff; border:2px solid var(--ciano);
+  font-weight:700; font-size:.82rem; color:var(--tinta); white-space:nowrap; box-shadow:var(--shadow-sm);
+}
+.drag-item.is-locked .drag-item--chip{ border-color:var(--verde); background:#eef7f1; }
+
+.drag-item--dot{
+  width:26px; height:26px; border-radius:50%; border:2px solid #14233b; box-shadow:var(--shadow-sm);
+}
+.drag-item--num{
+  width:34px; height:34px; border-radius:8px; display:grid; place-items:center;
+  background:#fff; border:2px solid var(--rosa); font-weight:700; color:var(--rosa); box-shadow:var(--shadow-sm);
+}
+.drag-item.is-locked .drag-item--num{ border-color:var(--verde); color:var(--verde); }
+
+.drag-item--shape{ background-repeat:no-repeat; background-size:contain; opacity:.92; }
+.drag-item.is-locked .drag-item--shape{ opacity:1; filter:drop-shadow(0 0 6px rgba(47,143,91,.5)); }
+
+.ativ-line{
+  position:absolute; width:2px; background:var(--rosa); border-radius:2px; transform-origin:top center;
+  pointer-events:none;
+}
+
+.drop-zone{
+  position:absolute; display:inline-block; border-radius:6px; vertical-align:top;
+  border:2px dashed rgba(14,124,139,.45); background:rgba(14,124,139,.08);
+  transition:background .2s, border-color .2s;
+}
+.drop-zone.is-locked{ border-color:rgba(47,143,91,.6); background:rgba(47,143,91,.12); }
+
+.drop-zone--answer{ border:2px solid #14233b; background:#fff; border-radius:4px; }
+.drop-zone--answer.is-locked{ border-color:var(--verde); background:#eef7f1; }
+
+.ativ-success{
+  margin-top:1.2rem; padding:1rem 1.3rem; border-radius:var(--radius-lg);
+  background:var(--verde); color:#fff; font-weight:700; text-align:center;
+  opacity:0; max-height:0; overflow:hidden; transition:opacity .3s, max-height .3s;
+}
+.ativ-success.is-visible{ opacity:1; max-height:200px; padding:1rem 1.3rem; }
+
+.ativ-actions{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.2rem; }
+
+/* --- atividade "clique para revelar" (atividade 5) --- */
+.reveal-tabs{ display:flex; gap:.6rem; margin-bottom:1rem; }
+.reveal-tab{
+  width:2.4rem; height:2.4rem; border-radius:50%; display:grid; place-items:center;
+  background:#fff; border:2px solid var(--ciano); color:var(--ciano-esc); font-weight:700; text-decoration:none;
+}
+.reveal-tab.is-active{ background:var(--ciano); color:#fff; }
+
+.reveal-grid{ display:grid; gap:1.4rem; grid-template-columns:1.1fr 1fr; align-items:start; }
+.reveal-panel{ display:none; }
+.reveal-panel.is-active{ display:block; }
+.reveal-panel h1{ font-family:var(--ff-display); font-size:1.3rem; color:var(--azul); margin:0 0 .8rem; }
+.reveal-panel p{ line-height:1.7; color:var(--tinta-70); }
+.reveal-term{
+  color:var(--rosa); font-weight:700; text-decoration:underline dotted; cursor:pointer; background:none; border:0; padding:0; font:inherit;
+}
+.reveal-term.is-active{ color:var(--verde); }
+
+.reveal-stage{ position:relative; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); }
+.reveal-stage img{ display:block; width:100%; height:auto; }
+.reveal-layer{ position:absolute; inset:0; opacity:0; transition:opacity .25s; pointer-events:none; }
+.reveal-layer.is-visible{ opacity:1; }
+.reveal-layer img{ width:100%; height:100%; object-fit:cover; }
+
+@media (max-width: 860px){
+  .reveal-grid{ grid-template-columns:1fr; }
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atividade 1 — Fundação da cidade | RioRio</title>
+  <meta name="description" content="Atividade interativa: arraste os números e letras para identificar os morros e locais da fundação do Rio de Janeiro." />
+  <meta name="theme-color" content="#0E7C8B" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/atividades.css?v=4" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <symbol id="ico-chevron" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="topo" data-header>
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html" aria-label="RioRio — página inicial">
+        <span class="brand__mark" aria-hidden="true">RioRio</span>
+        <span class="brand__tag">Cidade do Rio para estudantes</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="nav__toggle-label">Menu</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li class="nav__cta-item"><a class="btn btn--pink btn--sm" href="index.html#escolas">Adote na sua escola</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="ativ-main">
+      <div class="wrap">
+        <p class="ativ-crumbs">
+          <a href="index.html">RioRio</a> ›
+          <a href="index.html#atividades">Atividades</a> ›
+          <span>Atividade 1</span>
+        </p>
+
+        <div class="ativ-hero">
+          <div>
+            <p class="ativ-hero__kicker">Resumo da história do Rio · Atividade 1</p>
+            <h1 class="ativ-hero__title">Fundação da cidade</h1>
+          </div>
+          <nav class="ativ-nav" aria-label="Navegação entre atividades">
+            <a href="index.html#atividades">Voltar às atividades</a>
+            <a href="atividade-2.html">Próxima atividade →</a>
+          </nav>
+        </div>
+
+        <div class="ativ-intro">
+          <p><strong>Atividade 1:</strong> Vamos analisar o local da fundação da nossa cidade do Rio de Janeiro, por Estácio de Sá, em 1565. Nesta imagem você vê os três morros que ficam ao lado da entrada da Baía de Guanabara. Você sabe que morros são esses? Arraste o número 1, 2 ou 3 da imagem para o nome de cada morro abaixo.</p>
+          <p><strong>Atividade 2:</strong> Ao chegar na Guanabara, Estácio de Sá construiu um arraial fortificado, uma cidadezinha provisória, na encosta de um desses morros. Arraste a letra correta A, B, C ou D da imagem para cada nome abaixo. Atenção: uma letra vai sobrar!</p>
+        </div>
+
+        <div class="ativ-panel" data-drag-activity>
+          <h2>O mapa da entrada da Baía de Guanabara</h2>
+          <div class="ativ-stage-scroll">
+            <div class="ativ-stage" style="width:990px;height:325px;background-image:url('assets/images/atividades/fundacao-da-cidade-do-rio-de-janeiro.jpg')">
+              <span class="ativ-line" style="left:771px;top:154px;height:30px;background:#000"></span>
+              <span class="ativ-line" style="left:196px;top:161px;height:62px;background:#000"></span>
+              <span class="ativ-line" style="left:485px;top:125px;height:77px;background:#000;transform:rotate(135deg)"></span>
+              <span class="ativ-line" style="left:688px;top:73px;height:103px"></span>
+              <span class="ativ-line" style="left:361px;top:71px;height:195px"></span>
+              <span class="ativ-line" style="left:54px;top:99px;height:165px"></span>
+              <span class="ativ-line" style="left:285px;top:111px;height:131px"></span>
+
+              <div class="drag-item drag-item--num" data-drag="p1" style="left:752px;top:108px;color:#00cc00;border-color:#00cc00">1</div>
+              <div class="drag-item drag-item--num" data-drag="p2" style="left:178px;top:115px;color:#3366ff;border-color:#3366ff">2</div>
+              <div class="drag-item drag-item--num" data-drag="p3" style="left:428px;top:97px;color:#ff66ff;border-color:#ff66ff">3</div>
+              <div class="drag-item drag-item--num" data-drag="pA" style="left:671px;top:27px;color:#b59b00;border-color:#b59b00;background:#ffff66">A</div>
+              <div class="drag-item drag-item--num" data-drag="pB" style="left:344px;top:25px;color:#4141a8;border-color:#4141a8;background:#9999ff">B</div>
+              <div class="drag-item drag-item--num" data-drag="pC" style="left:37px;top:53px;color:#a35f00;border-color:#a35f00;background:#ff9900">C</div>
+              <div class="drag-item drag-item--num" data-drag="pD" style="left:269px;top:65px;color:#4f7300;border-color:#4f7300;background:#99cc00">D</div>
+            </div>
+          </div>
+
+          <div class="ativ-answers">
+            <div class="ativ-answers__grid">
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="p3" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Morro do Pão de Açúcar</span></div>
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="p1" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Morro da Urca</span></div>
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="p2" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Morro Cara de Cão</span></div>
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="pC" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Entrada da Baía de Guanabara</span></div>
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="pB" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Local da chegada de Estácio de Sá</span></div>
+              <div class="ativ-answers__row"><span class="drop-zone drop-zone--answer" data-drop="pD" style="position:relative;width:34px;height:34px;"></span><span class="ativ-answers__label">Local do arraial fortificado</span></div>
+            </div>
+          </div>
+
+          <p class="ativ-success" data-ativ-success>Muito bem! Você completou a atividade 1.</p>
+          <div class="ativ-actions">
+            <button class="btn btn--ghost" type="button" data-ativ-reset>Refazer atividade</button>
+          </div>
+        </div>
+
+        <nav class="ativ-nav" aria-label="Navegação entre atividades" style="justify-content:flex-end;background:transparent;padding:0">
+          <a href="index.html#atividades" style="background:var(--papel-2);color:var(--tinta)">Voltar às atividades</a>
+          <a href="atividade-2.html" style="background:var(--ciano);color:#fff">Próxima atividade →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">RioRio</span>
+        <p>A história da Cidade do Rio de Janeiro em quadrinhos: 1500–2000.</p>
+        <p class="handnote site-footer__motto">Conhecer para amar. Amar para preservar.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html#livro">O livro</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#caminhos">Caminhos do Rio</a></li>
+          <li><a href="index.html#acervo">Acervo</a></li>
+          <li><a href="index.html#autora">A autora</a></li>
+          <li><a href="index.html#escolas">Para escolas</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__contact">
+        <h2>Contato</h2>
+        <p>RESTAURO — Editora, Pesquisas e Projetos</p>
+        <p>Av. Treze de Maio, 23/301, Centro<br>Rio de Janeiro / RJ · CEP 20031-902</p>
+        <p><a href="https://wa.me/5521993195634" target="_blank" rel="noopener">WhatsApp (21) 99319-5634</a></p>
+        <p><a href="mailto:restauro.malba@gmail.com">restauro.malba@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="wrap site-footer__base">
+      <p>Autoria e desenhos: Renata de Faria Pereira · Editora RESTAURO.</p>
+      <p>© <span data-year>2026</span> RioRio · RESTAURO — Editora, Pesquisas e Projetos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=4" defer></script>
+  <script src="assets/js/atividades.js?v=4" defer></script>
+</body>
+</html>

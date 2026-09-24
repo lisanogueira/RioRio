@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RioRio — A história do Rio de Janeiro em quadrinhos</title>
+  <meta name="description" content="RioRio conta a história da Cidade do Rio de Janeiro em quadrinhos, de 1500 a 2000. Um livro para o Ensino Fundamental e o projeto de aulas de campo Caminhos do Rio, de Renata de Faria Pereira." />
+  <meta name="theme-color" content="#0E7C8B" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RioRio — A história do Rio em quadrinhos" />
+  <meta property="og:description" content="Conhecer para amar. Amar para preservar. História, geografia, cidadania e patrimônio numa narrativa desenhada à mão." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/capa-riorio.webp" />
+
+  <!-- Avoid flash-of-hidden-content: mark JS available before paint -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Fonts: preconnect + display swap. Falls back to system stacks if offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
+
+  <!-- LCP: preload the hero cover -->
+  <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
+
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============================================================= -->
+  <!-- SVG SPRITE — traços desenhados à mão, carimbos e ornamentos    -->
+  <!-- ============================================================= -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <symbol id="ico-underline" viewBox="0 0 200 12">
+        <path d="M3 8 C 40 2, 80 2, 120 6 S 180 10, 197 5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ico-arrow" viewBox="0 0 48 24">
+        <path d="M2 12 H 40 M30 3 L44 12 L30 21" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="ico-star" viewBox="0 0 24 24">
+        <path d="M12 2 L14.6 8.6 L21.5 9 L16.2 13.5 L18 20.2 L12 16.4 L6 20.2 L7.8 13.5 L2.5 9 L9.4 8.6 Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="ico-wa" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.4-.3.5l-.5.6c-.2.2-.3.4-.2.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.7.8 1.9 1 .3.1.5.2.5.3.1.2.1.6-.1 1Z"/>
+      </symbol>
+      <symbol id="ico-mail" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 6.5h18v11H3zM3 7l9 6 9-6"/>
+      </symbol>
+      <symbol id="ico-close" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 5l14 14M19 5 5 19"/>
+      </symbol>
+      <symbol id="ico-chevron" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================================================= -->
+  <!-- HEADER                                                          -->
+  <!-- ============================================================= -->
+  <header class="site-header" id="topo" data-header>
+    <div class="wrap header__inner">
+      <a class="brand" href="#topo" aria-label="RioRio — página inicial">
+        <span class="brand__mark" aria-hidden="true">RioRio</span>
+        <span class="brand__tag">Cidade do Rio para estudantes</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="nav__toggle-label">Menu</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a href="#livro">O livro</a></li>
+          <li><a href="#atividades">Atividades</a></li>
+          <li><a href="#caminhos">Caminhos do Rio</a></li>
+          <li><a href="#acervo">Acervo</a></li>
+          <li><a href="#autora">A autora</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li class="nav__cta-item"><a class="btn btn--pink btn--sm" href="#escolas">Adote na sua escola</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- =========================================================== -->
+    <!-- HERO                                                         -->
+    <!-- =========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__paper" aria-hidden="true"></div>
+
+      <!-- linhas desenhadas de fundo -->
+      <svg class="hero__lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="draw" d="M-20 700 C 300 620, 520 760, 760 660 S 1200 560, 1480 660" fill="none" stroke="#0E7C8B" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+        <path class="draw" d="M-20 760 C 320 700, 560 820, 820 720 S 1240 640, 1480 720" fill="none" stroke="#123C8C" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+      </svg>
+
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="seal" data-reveal>
+            <svg class="seal__star" aria-hidden="true"><use href="#ico-star"/></svg>
+            Cidade do Rio de Janeiro para estudantes
+          </p>
+          <h1 class="hero__title" id="hero-title" data-reveal>
+            A história do Rio<br />contada em
+            <span class="mark-word">quadrinhos
+              <svg class="mark-word__line" aria-hidden="true"><use href="#ico-underline"/></svg>
+            </span>
+          </h1>
+          <p class="hero__lead" data-reveal>
+            História, geografia, cidadania e patrimônio numa narrativa desenhada
+            à mão livre — <strong>1500 a 2000</strong>, da Colônia ao fim do século&nbsp;XX.
+          </p>
+          <div class="hero__actions" data-reveal>
+            <a class="btn btn--cyan" href="#livro">Conheça o livro</a>
+            <a class="btn btn--ghost" href="#escolas">Adote na sua escola</a>
+          </div>
+        </div>
+
+        <div class="hero__art">
+          <figure class="book book--hero" data-book>
+            <img class="book__cover" src="assets/images/capa-riorio.webp"
+                 width="600" height="820" fetchpriority="high"
+                 alt="Capa do livro RioRio — A história da Cidade do Rio de Janeiro em quadrinhos, 1500–2000." />
+            <figcaption class="book__floor" aria-hidden="true"></figcaption>
+          </figure>
+
+          <!-- Criu Carioca — anfitrião -->
+          <figure class="criu criu--hero" data-criu>
+            <img src="assets/images/criu.png" width="220" height="240"
+                 alt="Criu Carioca, o pássaro-professor que narra as histórias do Rio." />
+            <figcaption class="speech" role="note">O Rio é a nossa casa gigante!</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#manifesto" aria-label="Rolar para começar">
+        <span>começar a viagem</span>
+        <svg class="hero__scroll-ico" aria-hidden="true" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- MANIFESTO EDITORIAL                                          -->
+    <!-- =========================================================== -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="wrap manifesto__inner">
+        <p class="kicker kicker--center" data-reveal>Nosso ponto de partida</p>
+        <h2 class="manifesto__quote" id="manifesto-title" data-reveal>
+          <span>Conhecer para amar.</span>
+          <span class="manifesto__quote-em">Amar para preservar.</span>
+        </h2>
+        <p class="manifesto__text" data-reveal>
+          O Rio é entendido aqui como a nossa <strong>casa gigante</strong>. Cada rua, praça,
+          igreja e morro nos pertence. O RioRio nasceu para despertar nas crianças e jovens
+          o sentimento de pertencimento à cidade — e, com ele, o desejo de <strong>cuidar,
+          proteger e preservar</strong> o patrimônio que é de todos.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- BOOK SHOWCASE — O livro RioRio                               -->
+    <!-- =========================================================== -->
+    <section class="book-showcase" id="livro" aria-labelledby="livro-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker">O livro</p>
+          <h2 class="section-title" id="livro-title">RioRio, do papel à sala de aula</h2>
+          <p class="section-sub">
+            136 páginas desenhadas a mão livre que sintetizam quatro séculos de transformação
+            da cidade — com linguagem lúdica, alegre e crítica.
+          </p>
+        </header>
+
+        <div class="book-showcase__grid">
+          <div class="book-showcase__media" data-reveal>
+            <figure class="collage">
+              <img class="collage__main" src="assets/images/comic-transferencia.webp"
+                   width="500" height="708" loading="lazy" decoding="async"
+                   alt="Página original do livro RioRio: a transferência da cidade do Morro Cara de Cão para o Morro do Castelo." />
+              <img class="collage__pin collage__pin--a" src="assets/images/comic-governadores.webp"
+                   width="300" height="142" loading="lazy" decoding="async"
+                   alt="Página original do livro RioRio retratando o governador-geral Mem de Sá expulsando os franceses." />
+              <img class="collage__pin collage__pin--b" src="assets/images/comic-debret.webp"
+                   width="300" height="142" loading="lazy" decoding="async"
+                   alt="Página original do livro RioRio sobre os comerciantes estrangeiros que chegaram ao Rio após a abertura dos portos." />
+              <figcaption class="collage__note handnote">páginas originais do livro, desenhadas à mão livre</figcaption>
+            </figure>
+          </div>
+
+          <div class="book-showcase__body" data-reveal>
+            <ul class="stats" role="list">
+              <li class="stat">
+                <span class="stat__num">136</span>
+                <span class="stat__label">páginas desenhadas à mão</span>
+              </li>
+              <li class="stat">
+                <span class="stat__num">1500<span class="stat__sep">–</span>2000</span>
+                <span class="stat__label">quatro séculos de história</span>
+              </li>
+              <li class="stat">
+                <span class="stat__num">4</span>
+                <span class="stat__label">períodos: Colônia, Império, República e Idade Contemporânea</span>
+              </li>
+            </ul>
+
+            <p class="lede">
+              RioRio promove a reflexão sobre a Cidade do Rio de Janeiro na
+              <strong>Colônia</strong>, no <strong>Império</strong>, na <strong>República</strong> e na
+              <strong>Idade Contemporânea</strong>, até o ano 2000. É uma obra dedicada aos estudantes do
+              Ensino Fundamental, podendo ser adotada como atividade complementar de Geografia e História,
+              do 3º ao 5º ano.
+            </p>
+
+            <ul class="ticks" role="list">
+              <li>Quadrinhos em preto e branco, desenhados inteiramente à mão livre, com informações complementares no rodapé de cada página.</li>
+              <li>Premiado pelo IAB e pela Câmara Municipal; considerado obra de referência na bibliografia oficial de concurso público municipal (2002).</li>
+              <li>Editado pela primeira vez em 1992; a 12ª edição foi inteiramente redesenhada.</li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn btn--cyan" href="#linha-do-tempo">Percorrer a história</a>
+              <a class="btn btn--ghost" href="#contato">Informações e aquisição</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- HISTORICAL TIMELINE — Linha do tempo (5 capítulos)          -->
+    <!-- =========================================================== -->
+    <section class="timeline" id="linha-do-tempo" aria-labelledby="tl-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Linha do tempo</p>
+          <h2 class="section-title" id="tl-title">Cinco capítulos, uma cidade</h2>
+          <p class="section-sub">A narrativa do livro em cinco tempos — role para ver a cidade crescer.</p>
+        </header>
+      </div>
+
+      <ol class="tl" data-timeline>
+        <li class="tl__line" aria-hidden="true"><span class="tl__progress" data-tl-progress></span></li>
+
+        <li class="tl__item" data-reveal>
+          <div class="tl__dot" aria-hidden="true"><span>1</span></div>
+          <article class="tl__card">
+            <figure class="tl__fig">
+              <img src="assets/images/era1-fundacao.webp" width="460" height="640" loading="lazy" decoding="async"
+                   alt="Página do RioRio sobre a fundação da cidade, junto ao Morro Cara de Cão." />
+            </figure>
+            <div class="tl__text">
+              <p class="tl__years">1500 – 1567</p>
+              <h3 class="tl__name">Fundação da cidade</h3>
+              <p>Da chegada dos europeus à Baía de Guanabara à fundação por Estácio de Sá, junto ao
+                 Morro Cara de Cão, e à mudança da cidade para o Morro do Castelo — onde o Rio começou a crescer.</p>
+            </div>
+          </article>
+        </li>
+
+        <li class="tl__item" data-reveal>
+          <div class="tl__dot" aria-hidden="true"><span>2</span></div>
+          <article class="tl__card">
+            <figure class="tl__fig">
+              <img src="assets/images/era2-expansao.webp" width="460" height="640" loading="lazy" decoding="async"
+                   alt="Quadrinho do RioRio: disputas na Guanabara e a expansão colonial." />
+            </figure>
+            <div class="tl__text">
+              <p class="tl__years">1567 – 1808</p>
+              <h3 class="tl__name">Primeira expansão</h3>
+              <p>A cidade colonial se firma como capital, desce dos morros para a várzea e drena
+                 as antigas lagoas do Centro. Igrejas, conventos e chafarizes desenham o Rio do Império que se aproxima.</p>
+            </div>
+          </article>
+        </li>
+
+        <li class="tl__item" data-reveal>
+          <div class="tl__dot" aria-hidden="true"><span>3</span></div>
+          <article class="tl__card">
+            <figure class="tl__fig">
+              <img src="assets/images/era3-seculo19.webp" width="460" height="640" loading="lazy" decoding="async"
+                   alt="Página do RioRio retratando a Praça XV em 1832 e a cidade imperial." />
+            </figure>
+            <div class="tl__text">
+              <p class="tl__years">1808 – 1904</p>
+              <h3 class="tl__name">Crescimento urbano do século XIX</h3>
+              <p>Com a chegada da Corte e, depois, o Império, a cidade se moderniza: praças, jardins,
+                 as primeiras estradas de ferro e a expansão que prepara a grande reforma urbana.</p>
+            </div>
+          </article>
+        </li>
+
+        <li class="tl__item" data-reveal>
+          <div class="tl__dot" aria-hidden="true"><span>4</span></div>
+          <article class="tl__card">
+            <figure class="tl__fig">
+              <img src="assets/images/era4-moderna.webp" width="460" height="640" loading="lazy" decoding="async"
+                   alt="Quadrinho do RioRio sobre as primeiras estradas de ferro e a cidade moderna." />
+            </figure>
+            <div class="tl__text">
+              <p class="tl__years">1904 – 1960</p>
+              <h3 class="tl__name">Cidade moderna</h3>
+              <p>Avenidas rasgadas, morros desmontados, bondes e trens: o Rio se reinventa como
+                 capital moderna, entre reformas urbanas e um intenso surto migratório.</p>
+            </div>
+          </article>
+        </li>
+
+        <li class="tl__item" data-reveal>
+          <div class="tl__dot" aria-hidden="true"><span>5</span></div>
+          <article class="tl__card">
+            <figure class="tl__fig">
+              <img src="assets/images/era5-contemporanea.webp" width="460" height="640" loading="lazy" decoding="async"
+                   alt="Página do RioRio sobre o surto migratório e a cidade contemporânea." />
+            </figure>
+            <div class="tl__text">
+              <p class="tl__years">1960 – 2000</p>
+              <h3 class="tl__name">Cidade contemporânea</h3>
+              <p>Da Ponte Rio–Niterói à Linha Vermelha, a metrópole se espalha. Crescem os desafios
+                 do ambiente urbano — como a poluição das lagoas — e a urgência de preservar o que é de todos.</p>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- ACTIVITIES — Atividades interativas para estudantes         -->
+    <!-- =========================================================== -->
+    <section class="activities" id="atividades" aria-labelledby="atv-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Atividades</p>
+          <h2 class="section-title" id="atv-title">Atividades para a sala de aula</h2>
+          <p class="section-sub">
+            Exercícios que levam o estudante a observar a cidade — nascidos dos cadernos do
+            Caminhos do Rio. Experimente uma delas aqui mesmo.
+          </p>
+        </header>
+
+        <div class="atv-redirect" data-reveal>
+          <div>
+            <p class="atv-redirect__kicker">Atividades da escola</p>
+            <p class="atv-redirect__text">
+              Cinco atividades completas de arrastar e clicar, uma para cada mapa da história do Rio —
+              para usar nos computadores da escola, antes ou depois do passeio.
+            </p>
+          </div>
+          <a class="btn btn--cyan" href="atividade-1.html">Ir para as atividades da escola →</a>
+        </div>
+
+        <!-- Atividade interativa: A fundação da cidade -->
+        <div class="atv-card" data-reveal>
+          <div class="atv-card__intro">
+            <p class="kicker">Resumo da história do Rio · Atividade 1</p>
+            <h3 class="atv-card__title">A fundação da cidade</h3>
+            <p>
+              Vamos analisar o local onde a cidade do Rio de Janeiro foi fundada por Estácio
+              de Sá, em 1565. Na imagem estão os três morros junto à entrada da Baía de
+              Guanabara. Descubra qual é cada um: escolha o número certo para cada morro.
+            </p>
+          </div>
+
+          <form class="quiz" data-quiz>
+            <figure class="quiz__scene">
+              <img src="assets/images/atv-fundacao.jpg" width="1024" height="288" loading="lazy" decoding="async"
+                   alt="Panorama histórico da entrada da Baía de Guanabara com os morros Cara de Cão, da Urca e do Pão de Açúcar." />
+              <span class="quiz__marker" style="left:6%; top:74%">1</span>
+              <span class="quiz__marker" style="left:47%; top:66%">2</span>
+              <span class="quiz__marker" style="left:60%; top:34%">3</span>
+            </figure>
+
+            <ul class="quiz__rows" role="list">
+              <li class="quiz__row" data-quiz-row>
+                <label for="q-caradecao">Morro Cara de Cão</label>
+                <span class="quiz__pick">
+                  <select id="q-caradecao" data-answer="1">
+                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
+                  </select>
+                  <span class="quiz__feedback" aria-live="polite"></span>
+                </span>
+              </li>
+              <li class="quiz__row" data-quiz-row>
+                <label for="q-urca">Morro da Urca</label>
+                <span class="quiz__pick">
+                  <select id="q-urca" data-answer="2">
+                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
+                  </select>
+                  <span class="quiz__feedback" aria-live="polite"></span>
+                </span>
+              </li>
+              <li class="quiz__row" data-quiz-row>
+                <label for="q-paodeacucar">Morro do Pão de Açúcar</label>
+                <span class="quiz__pick">
+                  <select id="q-paodeacucar" data-answer="3">
+                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
+                  </select>
+                  <span class="quiz__feedback" aria-live="polite"></span>
+                </span>
+              </li>
+            </ul>
+
+            <div class="quiz__actions">
+              <button class="btn btn--cyan" type="button" data-quiz-check>Verificar</button>
+              <button class="btn btn--ghost" type="button" data-quiz-reset>Refazer</button>
+              <p class="quiz__status" data-quiz-status role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Série "Resumo da história do Rio" -->
+        <div class="atv-series" data-reveal>
+          <h3 class="atv-series__title">Série “Resumo da história do Rio”</h3>
+          <ol class="atv-series__list" role="list">
+            <li><a class="atv-series__link" href="atividade-1.html"><span class="atv-series__n">1</span> A fundação da cidade</a></li>
+            <li><a class="atv-series__link" href="atividade-2.html"><span class="atv-series__n">2</span> O nosso município</a></li>
+            <li><a class="atv-series__link" href="atividade-3.html"><span class="atv-series__n">3</span> Onde o Rio começou</a></li>
+            <li><a class="atv-series__link" href="atividade-4.html"><span class="atv-series__n">4</span> As principais vias da cidade</a></li>
+            <li><a class="atv-series__link" href="atividade-5.html"><span class="atv-series__n">5</span> A origem da cidade e a principal praça</a></li>
+          </ol>
+          <p class="atv-series__note">
+            Clique em cada título para arrastar as peças no mapa. Cinco atividades, uma para cada tempo da linha do tempo — usadas antes,
+            durante e depois do passeio.
+          </p>
+        </div>
+
+        <!-- Imagens antigas para observar -->
+        <div class="atv-hist" data-reveal>
+          <h3 class="atv-hist__title">Imagens antigas para observar</h3>
+          <p class="atv-hist__sub">Gravuras históricas do Rio para o estudante observar de perto. Clique para ampliar.</p>
+          <ul class="hist" role="list" data-gallery>
+            <li class="hist__item">
+              <a class="gallery__link" href="assets/images/hist-saosebastiao.webp"
+                 data-caption="Cidade de São Sebastião do Rio de Janeiro, 1775. Onde estariam a atual Praça XV e os morros do Castelo e de São Bento?">
+                <img src="assets/images/hist-saosebastiao.webp" width="640" height="360" loading="lazy" decoding="async"
+                     alt="Gravura da cidade de São Sebastião do Rio de Janeiro em 1775.">
+                <span class="hist__cap"><strong>1775</strong> · Cidade de São Sebastião</span>
+              </a>
+            </li>
+            <li class="hist__item">
+              <a class="gallery__link" href="assets/images/hist-debret.webp"
+                 data-caption="Praça do Palácio, por Debret, c.1825. Quantas carruagens há? E lampiões? Observe as cenas do cotidiano.">
+                <img src="assets/images/hist-debret.webp" width="640" height="360" loading="lazy" decoding="async"
+                     alt="Gravura de Jean-Baptiste Debret da Praça do Palácio, cerca de 1825.">
+                <span class="hist__cap"><strong>c.1825</strong> · Praça do Palácio · Debret</span>
+              </a>
+            </li>
+            <li class="hist__item">
+              <a class="gallery__link" href="assets/images/hist-largopaco.jpg"
+                 data-caption="Largo do Paço, por John Steinmann, c.1830 — chafariz, Paço Imperial, igrejas e a vida dos habitantes do Rio.">
+                <img src="assets/images/hist-largopaco.jpg" width="640" height="360" loading="lazy" decoding="async"
+                     alt="Gravura de John Steinmann do Largo do Paço, cerca de 1830.">
+                <span class="hist__cap"><strong>c.1830</strong> · Largo do Paço · Steinmann</span>
+              </a>
+            </li>
+            <li class="hist__item">
+              <a class="gallery__link" href="assets/images/hist-rugendas.jpg"
+                 data-caption="Vista do Mosteiro de São Bento, por Rugendas, c.1822–1825 — o casario colonial, a Rua Direita e, ao fundo, o Pão de Açúcar.">
+                <img src="assets/images/hist-rugendas.jpg" width="640" height="360" loading="lazy" decoding="async"
+                     alt="Gravura de Johann Moritz Rugendas com vista do Mosteiro de São Bento.">
+                <span class="hist__cap"><strong>c.1822</strong> · Mosteiro de São Bento · Rugendas</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="atv-cta" data-reveal>
+          <p>As atividades acompanham o livro e os passeios. Quer usá-las com a sua turma?</p>
+          <a class="btn btn--yellow" href="#escolas">Leve as atividades para a sua escola</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- CRIU INTRODUCTION                                            -->
+    <!-- =========================================================== -->
+    <section class="criu-intro" id="criu" aria-labelledby="criu-title">
+      <div class="wrap criu-intro__inner">
+        <div class="criu-intro__art" data-reveal>
+          <div class="criu-intro__frame">
+            <img src="assets/images/criu.png" width="380" height="420" loading="lazy" decoding="async"
+                 alt="Criu Carioca, o pássaro-professor idealista e apaixonado pela cidade." />
+          </div>
+          <svg class="criu-intro__scribble" aria-hidden="true" viewBox="0 0 120 120">
+            <path class="draw" d="M10 60 C 30 20, 90 20, 110 55" fill="none" stroke="#C11F5B" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="criu-intro__body" data-reveal>
+          <p class="kicker">O anfitrião</p>
+          <h2 class="section-title" id="criu-title">Quem conta a história é o Criu Carioca</h2>
+          <p class="lede">
+            O pássaro-professor Criu Carioca é o narrador do RioRio: estudioso, idealista e
+            apaixonado pela sua missão junto aos estudantes. Ele nunca desistiu de lutar por
+            um Rio melhor — e sua forma de luta é contar a história da cidade e levar o olhar
+            do estudante à descoberta de seus espaços e belezas.
+          </p>
+          <ul class="quotes" role="list">
+            <li class="quotes__item">“O Rio é a nossa casa gigante.”</li>
+            <li class="quotes__item">“É preciso conhecer para amar, e amar para preservar.”</li>
+            <li class="quotes__item">“Vamos conhecer a nossa cidade para melhor preservá-la!”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- CAMINHOS DO RIO — das páginas para as ruas                  -->
+    <!-- =========================================================== -->
+    <section class="caminhos" id="caminhos" aria-labelledby="caminhos-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker kicker--light">Caminhos do Rio</p>
+          <h2 class="section-title section-title--light" id="caminhos-title">Das páginas do livro para as ruas da cidade</h2>
+          <p class="section-sub section-sub--light">
+            Passeios culturais e aulas de campo pelo patrimônio histórico e artístico do Rio,
+            com um caderno de atividades pensado especialmente para cada roteiro.
+          </p>
+        </header>
+
+        <div class="caminhos__offer" data-reveal>
+          <span>Dez roteiros</span><span>Orientação no passeio</span><span>Cadernos de atividades</span><span>Formação de professores</span><span>Novos roteiros sob medida</span>
+        </div>
+
+        <ul class="routes" role="list" data-reveal>
+          <li class="route" style="--rc:var(--verde)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-origem.webp" width="360" height="240" loading="lazy" decoding="async" alt="Praça XV e o Arco do Teles, ponto de partida do roteiro Origem da cidade."></span>
+              <span class="route__body"><span class="route__n">01</span><span class="route__name">Origem da cidade</span><span class="route__desc">Praça XV, Arco do Teles e Paço Imperial — a principal praça do período colonial.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--ciano)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-lagoas.webp" width="360" height="240" loading="lazy" decoding="async" alt="Igreja histórica do Centro, no roteiro das antigas lagoas."></span>
+              <span class="route__body"><span class="route__n">02</span><span class="route__name">Antigas lagoas do Centro</span><span class="route__desc">Boqueirão, Desterro e Santo Antônio: Passeio Público, Largo da Carioca e conventos.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--laranja)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-fundacao.webp" width="360" height="240" loading="lazy" decoding="async" alt="Muralhas e canhões antigos vistos no roteiro da fundação da cidade."></span>
+              <span class="route__body"><span class="route__n">03</span><span class="route__name">Fundação da cidade</span><span class="route__desc">Morro Cara de Cão, muralhas, fortes e a paisagem da Baía de Guanabara.</span></span>
+            </a>
+          </li>
+          <li class="route route--off" style="--rc:var(--azul)">
+            <a class="route__link" href="#contato" aria-describedby="rot4-status">
+              <span class="route__img"><img src="assets/images/rot-cristo.webp" width="360" height="240" loading="lazy" decoding="async" alt="Cristo Redentor no alto do Corcovado.">
+                <span class="route__flag" id="rot4-status">Indisponível no momento</span>
+              </span>
+              <span class="route__body"><span class="route__n">04</span><span class="route__name">Cristo Redentor do Corcovado</span><span class="route__desc">A imagem do Cristo, a Estrada de Ferro do Corcovado e a Floresta da Tijuca vistas do alto.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--rosa)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-saobento.webp" width="360" height="240" loading="lazy" decoding="async" alt="Interior dourado da Igreja do Mosteiro de São Bento."></span>
+              <span class="route__body"><span class="route__n">05</span><span class="route__name">Igreja do Mosteiro de São Bento</span><span class="route__desc">Arte sacra e arquitetura de uma das mais bonitas igrejas do Brasil.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--ciano)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-gloria.webp" width="360" height="240" loading="lazy" decoding="async" alt="Igreja de Nossa Senhora da Glória do Outeiro e seus azulejos azuis."></span>
+              <span class="route__body"><span class="route__n">06</span><span class="route__name">Igreja de Nossa Senhora da Glória</span><span class="route__desc">Monumento do século XVIII: pinturas, painéis de azulejos azuis e arte sacra.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--azul)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-ilhafiscal.webp" width="360" height="240" loading="lazy" decoding="async" alt="Castelo neogótico da Ilha Fiscal na Baía de Guanabara."></span>
+              <span class="route__body"><span class="route__n">07</span><span class="route__name">Ilha Fiscal</span><span class="route__desc">O castelo neogótico em pedra, inaugurado por Dom Pedro II, palco do último baile do Império.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--verde)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-jardimbotanico.webp" width="360" height="240" loading="lazy" decoding="async" alt="Estudante observando árvores gigantes no Jardim Botânico."></span>
+              <span class="route__body"><span class="route__n">08</span><span class="route__name">Jardim Botânico</span><span class="route__desc">Para 6 a 8 anos: árvores gigantes, orquídeas, bromélias e cactos, apoiando a alfabetização.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--laranja)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-zoologico.webp" width="360" height="240" loading="lazy" decoding="async" alt="Animais do Jardim Zoológico observados por crianças."></span>
+              <span class="route__body"><span class="route__n">09</span><span class="route__name">Jardim Zoológico</span><span class="route__desc">Para 6 a 8 anos: a descoberta das características e da beleza de diferentes animais do Zoo.</span></span>
+            </a>
+          </li>
+          <li class="route" style="--rc:var(--rosa)">
+            <a class="route__link" href="#contato">
+              <span class="route__img"><img src="assets/images/rot-igrejas.webp" width="360" height="240" loading="lazy" decoding="async" alt="Talhas e pinturas de igrejas coloniais cariocas."></span>
+              <span class="route__body"><span class="route__n">10</span><span class="route__name">Igrejas coloniais</span><span class="route__desc">Antiga Sé, Candelária, São Bento e outras — o roteiro é definido com a escola.</span></span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="caminhos__cta" data-reveal>
+          <figure class="caderno">
+            <img src="assets/images/caderno-caminhos.webp" width="300" height="410" loading="lazy" decoding="async"
+                 alt="Capa de um caderno de atividades do projeto Caminhos do Rio." />
+            <figcaption class="handnote">um caderno para cada roteiro</figcaption>
+          </figure>
+          <div class="caminhos__cta-text">
+            <h3>Leve a sua turma para a rua</h3>
+            <p>O projeto traz história, arquitetura e arte dos espaços do Rio para as aulas de
+               História, Arte e Geografia do Ensino Fundamental.</p>
+            <div class="btn-row">
+              <a class="btn btn--yellow" href="#contato">Agende o passeio da sua turma</a>
+              <a class="btn btn--ghost btn--on-dark" href="#escolas">Conheça os roteiros</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- ARCHIVE GALLERY — Acervo vivo                               -->
+    <!-- =========================================================== -->
+    <section class="archive" id="acervo" aria-labelledby="acervo-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Acervo vivo</p>
+          <h2 class="section-title" id="acervo-title">Memória guardada em papel</h2>
+          <p class="section-sub">Quadrinhos, cartas de estudantes, recortes de jornal, capas antigas e prêmios. Clique para ampliar.</p>
+        </header>
+
+        <ul class="gallery" role="list" data-gallery data-reveal>
+          <li class="gallery__item gallery__item--tall">
+            <a class="gallery__link" href="assets/images/carta-estudante.webp"
+               data-caption="Carta de estudante enviada ao projeto RioRio.">
+              <img src="assets/images/carta-estudante.webp" width="500" height="640" loading="lazy" decoding="async" alt="Carta manuscrita de um estudante sobre o RioRio.">
+              <span class="gallery__tag">Carta de estudante</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/premio-iab.webp"
+               data-caption="Prêmio do Instituto dos Arquitetos do Brasil (IAB), 1992.">
+              <img src="assets/images/premio-iab.webp" width="420" height="300" loading="lazy" decoding="async" alt="Documento do prêmio do IAB concedido ao RioRio.">
+              <span class="gallery__tag">Prêmio IAB · 1992</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/doc-oglobo.webp"
+               data-caption="Recorte do jornal O Globo — 23/01/2001.">
+              <img src="assets/images/doc-oglobo.webp" width="420" height="300" loading="lazy" decoding="async" alt="Recorte de jornal O Globo mencionando o RioRio.">
+              <span class="gallery__tag">Jornal · O Globo</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/capa-1992.jpg"
+               data-caption="Primeira capa do RioRio, 1992.">
+              <img src="assets/images/capa-1992.jpg" width="420" height="300" loading="lazy" decoding="async" alt="Primeira capa do livro RioRio, de 1992.">
+              <span class="gallery__tag">Primeira capa · 1992</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/premio-camara.webp"
+               data-caption="Prêmio da Câmara Municipal da Cidade — 10/12/2003.">
+              <img src="assets/images/premio-camara.webp" width="420" height="300" loading="lazy" decoding="async" alt="Documento do prêmio da Câmara Municipal do Rio.">
+              <span class="gallery__tag">Prêmio Câmara · 2003</span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall">
+            <a class="gallery__link" href="assets/images/doc-registro91.jpg"
+               data-caption="Registro de direitos autorais do RioRio — 06/11/1991.">
+              <img src="assets/images/doc-registro91.jpg" width="500" height="640" loading="lazy" decoding="async" alt="Documento do registro de direitos autorais de 1991.">
+              <span class="gallery__tag">Registro autoral · 1991</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/comic-capital.webp"
+               data-caption="Página original do livro RioRio: o Rio, capital do reino.">
+              <img src="assets/images/comic-capital.webp" width="420" height="594" loading="lazy" decoding="async" alt="Página original do livro RioRio retratando o Rio como capital do reino.">
+              <span class="gallery__tag">Quadrinho</span>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__link" href="assets/images/comic-transferencia.webp"
+               data-caption="Página original do livro RioRio sobre a transferência e o crescimento da cidade.">
+              <img src="assets/images/comic-transferencia.webp" width="420" height="594" loading="lazy" decoding="async" alt="Página original do livro RioRio sobre a transferência da cidade.">
+              <span class="gallery__tag">Quadrinho</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- LINKOUT — projeto irmão: História do Rio para Todos          -->
+    <!-- =========================================================== -->
+    <section class="linkout" id="historia-para-todos" aria-labelledby="linkout-title">
+      <div class="wrap linkout__inner" data-reveal>
+        <p class="kicker kicker--center">Continue a viagem</p>
+        <h2 class="section-title" id="linkout-title">Conheça o História do Rio para Todos</h2>
+        <p class="lede">
+          Um projeto irmão do RioRio: um site dedicado a contar a história da Cidade do Rio de
+          Janeiro para todos os públicos, com linhas do tempo, mapas históricos e imagens da
+          paisagem carioca ao longo dos séculos.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--cyan" href="https://historiadorioparatodos.com.br/" target="_blank" rel="noopener">
+            Visitar historiadorioparatodos.com.br
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- AUTHOR                                                       -->
+    <!-- =========================================================== -->
+    <section class="author" id="autora" aria-labelledby="autora-title">
+      <div class="wrap author__inner">
+        <div class="author__portrait" data-reveal>
+          <figure class="portrait">
+            <img src="assets/images/criu-prefeito.webp" width="520" height="360" loading="lazy" decoding="async"
+                 alt="Registro do projeto RioRio: o Criu Carioca em atividade institucional na cidade." />
+            <figcaption class="portrait__cap handnote">o RioRio pelas ruas do Rio</figcaption>
+          </figure>
+        </div>
+        <div class="author__body" data-reveal>
+          <p class="kicker">A autora</p>
+          <h2 class="section-title" id="autora-title">Renata de Faria Pereira</h2>
+          <p class="lede">
+            Professora e arquiteta, mestre em conservação e restauro, Renata assina a autoria e
+            todos os desenhos do RioRio. Editado pela primeira vez em 1992, o livro chega à
+            <strong>12ª edição</strong>, com todos os desenhos renovados e a narrativa enriquecida
+            por novos quadrinhos.
+          </p>
+          <p>
+            Seu trabalho une história, arquitetura e preservação do Rio a uma prática pedagógica
+            afetuosa e crítica. A obra é publicada pela <strong>RESTAURO — Editora, Pesquisas e
+            Projetos</strong>, dedicada a pesquisas e projetos culturais e educativos para o Ensino Fundamental.
+          </p>
+          <p class="author__sign handnote">Renata de&nbsp;Faria&nbsp;Pereira</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- SCHOOLS CTA                                                  -->
+    <!-- =========================================================== -->
+    <section class="schools" id="escolas" aria-labelledby="escolas-title">
+      <div class="wrap schools__inner">
+        <div class="schools__head" data-reveal>
+          <p class="kicker kicker--light">Para escolas e educadores</p>
+          <h2 class="section-title section-title--light" id="escolas-title">Leve o RioRio para a sua escola</h2>
+          <p class="section-sub section-sub--light">
+            Um apoio concreto para História e Geografia no Ensino Fundamental — do livro em sala
+            de aula às aulas de campo pela cidade.
+          </p>
+        </div>
+        <ul class="schools__grid" role="list" data-reveal>
+          <li class="scard"><h3>Adoção do livro</h3><p>RioRio como atividade complementar de História e Geografia, do 3º ao 5º ano.</p></li>
+          <li class="scard"><h3>Passeios culturais</h3><p>Dez roteiros de aulas de campo pelo patrimônio histórico e artístico do Rio.</p></li>
+          <li class="scard"><h3>Cadernos de atividades</h3><p>Material próprio para cada roteiro, pensado para o olhar do estudante.</p></li>
+          <li class="scard"><h3>Orientação no passeio</h3><p>Acompanhamento da turma durante toda a caminhada.</p></li>
+          <li class="scard"><h3>Formação de professores</h3><p>Apoio ao educador para aproveitar a obra e os roteiros em sala.</p></li>
+          <li class="scard"><h3>Novos roteiros</h3><p>Construção de percursos sob medida, definidos junto com a escola.</p></li>
+        </ul>
+        <div class="schools__cta" data-reveal>
+          <a class="btn btn--yellow btn--lg" href="#contato">Leve o RioRio para a sua escola</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- CLOSING                                                      -->
+    <!-- =========================================================== -->
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="wrap closing__inner">
+        <figure class="closing__criu" data-reveal>
+          <img src="assets/images/criu.png" width="260" height="286" loading="lazy" decoding="async"
+               alt="Criu Carioca acenando ao fim da viagem pela história do Rio." />
+        </figure>
+        <blockquote class="closing__quote" id="closing-title" data-reveal>
+          “Vamos conhecer a nossa cidade<br /> para melhor preservá-la.”
+        </blockquote>
+        <div class="closing__actions" data-reveal>
+          <a class="btn btn--cyan btn--lg" href="#contato">Falar com o projeto</a>
+          <a class="btn btn--pink btn--lg" href="#escolas">Adotar na escola</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- CONTACT                                                      -->
+    <!-- =========================================================== -->
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="wrap contact__inner">
+        <div class="contact__intro" data-reveal>
+          <p class="kicker">Fale conosco</p>
+          <h2 class="section-title" id="contato-title">Vamos conversar sobre o Rio</h2>
+          <p class="section-sub">
+            Para adquirir o livro, agendar um passeio ou levar o RioRio à sua escola, fale com a gente.
+          </p>
+          <ul class="contact__list" role="list">
+            <li>
+              <a class="contact__row" href="https://wa.me/5521993195634" target="_blank" rel="noopener">
+                <svg class="contact__ico" aria-hidden="true"><use href="#ico-wa"/></svg>
+                <span><strong>WhatsApp</strong><br>(21) 99319-5634</span>
+              </a>
+            </li>
+            <li>
+              <a class="contact__row" href="mailto:restauro.malba@gmail.com">
+                <svg class="contact__ico" aria-hidden="true"><use href="#ico-mail"/></svg>
+                <span><strong>E-mail</strong><br>restauro.malba@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form" data-contact-form novalidate aria-describedby="form-help">
+          <p class="contact__form-title">Envie uma mensagem</p>
+          <p id="form-help" class="contact__form-help">Preencha e abriremos o seu WhatsApp com a mensagem pronta.</p>
+
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required />
+            <span class="field__error" data-error-for="f-nome" hidden>Informe o seu nome.</span>
+          </div>
+          <div class="field">
+            <label for="f-escola">Escola ou instituição <span class="field__opt">(opcional)</span></label>
+            <input id="f-escola" name="escola" type="text" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="f-assunto">Assunto</label>
+            <select id="f-assunto" name="assunto">
+              <option>Adotar o livro na escola</option>
+              <option>Agendar um passeio (Caminhos do Rio)</option>
+              <option>Adquirir um exemplar</option>
+              <option>Outro assunto</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Mensagem</label>
+            <textarea id="f-msg" name="mensagem" rows="4" required></textarea>
+            <span class="field__error" data-error-for="f-msg" hidden>Escreva uma mensagem.</span>
+          </div>
+          <button class="btn btn--cyan btn--block" type="submit">
+            <svg class="btn__ico" aria-hidden="true"><use href="#ico-wa"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+          <p class="contact__form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================== -->
+  <!-- FOOTER                                                       -->
+  <!-- =========================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">RioRio</span>
+        <p>A história da Cidade do Rio de Janeiro em quadrinhos: 1500–2000.</p>
+        <p class="handnote site-footer__motto">Conhecer para amar. Amar para preservar.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Rodapé">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="#livro">O livro</a></li>
+          <li><a href="#atividades">Atividades</a></li>
+          <li><a href="#caminhos">Caminhos do Rio</a></li>
+          <li><a href="#acervo">Acervo</a></li>
+          <li><a href="#autora">A autora</a></li>
+          <li><a href="#historia-para-todos">História do Rio para Todos</a></li>
+          <li><a href="#escolas">Para escolas</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__contact">
+        <h2>Contato</h2>
+        <p>RESTAURO — Editora, Pesquisas e Projetos</p>
+        <p>Av. Treze de Maio, 23/301, Centro<br>Rio de Janeiro / RJ · CEP 20031-902</p>
+        <p><a href="https://wa.me/5521993195634" target="_blank" rel="noopener">WhatsApp (21) 99319-5634</a></p>
+        <p><a href="mailto:restauro.malba@gmail.com">restauro.malba@gmail.com</a></p>
+        <ul class="social" aria-label="Redes sociais">
+          <li><a href="https://www.instagram.com/edicoesriorio/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/riorio.com.br/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap site-footer__base">
+      <p>Autoria e desenhos: Renata de Faria Pereira · Editora RESTAURO.</p>
+      <p>© <span data-year>2026</span> RioRio · RESTAURO — Editora, Pesquisas e Projetos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================== -->
+  <!-- LIGHTBOX (Acervo) — hidratado por JS                        -->
+  <!-- =========================================================== -->
+  <div class="lightbox" data-lightbox hidden aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Item do acervo" tabindex="-1" data-lightbox-dialog>
+      <button class="lightbox__btn lightbox__close" data-lightbox-close aria-label="Fechar (Esc)">
+        <svg aria-hidden="true"><use href="#ico-close"/></svg>
+      </button>
+      <button class="lightbox__btn lightbox__nav lightbox__prev" data-lightbox-prev aria-label="Item anterior">
+        <svg aria-hidden="true" style="transform:rotate(180deg)"><use href="#ico-chevron"/></svg>
+      </button>
+      <figure class="lightbox__fig">
+        <img class="lightbox__img" data-lightbox-img src="" alt="" />
+        <figcaption class="lightbox__cap" data-lightbox-cap></figcaption>
+      </figure>
+      <button class="lightbox__btn lightbox__nav lightbox__next" data-lightbox-next aria-label="Próximo item">
+        <svg aria-hidden="true"><use href="#ico-chevron"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js?v=4" defer></script>
+</body>
+</html>
