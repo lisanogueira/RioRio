@@ -40,8 +40,8 @@
   --azul:       #123C8C;   /* azul intenso */
 
   /* Acentos (≈15%) */
-  --amarelo:    #F2B705;   /* descoberta — fundos/realces */
-  --amarelo-cl: #FBE08A;
+  --amarelo:    #F6C744;   /* descoberta — fundos/realces (mais claro) */
+  --amarelo-cl: #FDE9AC;
   --rosa:       #C11F5B;   /* chamadas / acentos */
   --verde:      #2F8F5B;
   --laranja:    #D9642A;
@@ -211,7 +211,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 }
 .seal__star{ width:1.1em; height:1.1em; color:var(--amarelo); }
 .hero__title{
-  font-size:clamp(2.5rem, 1.4rem + 5vw, 4.9rem); margin:1.1rem 0 0; font-weight:700;
+  font-size:clamp(2.5rem, 1.4rem + 5vw, 4.9rem); margin:1.1rem 0 0; font-weight:400;
 }
 .hero__lead{ font-size:clamp(1.05rem,1rem + .5vw,1.3rem); color:var(--tinta-70); max-width:34ch; margin-top:1.2rem; }
 .hero__actions{ margin-top:1.7rem; display:flex; flex-wrap:wrap; gap:.9rem; }
@@ -268,7 +268,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .manifesto__text strong{ color:#fff; }
 
 /* ---------- 7. BOOK SHOWCASE ---------- */
-.book-showcase{ background:var(--papel); }
+.book-showcase{ background:#FBEAF0; }
 .book-showcase__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
 .collage{ position:relative; margin:0; padding-block:1rem; }
 .collage__main{
