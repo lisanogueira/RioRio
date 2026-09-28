@@ -276,7 +276,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
   transform:rotate(-2deg); background:#fff;
 }
 .collage__pin{
-  position:absolute; width:44%; border-radius:6px; border:5px solid #fff; box-shadow:var(--shadow-md); background:#fff;
+  position:absolute; width:52%; border-radius:6px; border:5px solid #fff; box-shadow:var(--shadow-md); background:#fff;
 }
 .collage__pin--a{ right:0; top:12%; transform:rotate(4deg); }
 .collage__pin--b{ right:6%; bottom:6%; transform:rotate(-5deg); }

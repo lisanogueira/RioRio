@@ -8,74 +8,60 @@
     var drops = root.querySelectorAll('[data-drop]');
     if (!drags.length) return;
 
-    var active = null, offsetX = 0, offsetY = 0, startLeft = 0, startTop = 0;
+    var active = null, offsetX = 0, offsetY = 0;
+    // Per-element "home": where to put it back if the drop misses, and what
+    // inline styles it had before we ever touched it.
+    var homes = new Map();
     var total = drops.length;
 
     function point(e) {
       return e.touches && e.touches.length ? e.touches[0] : e;
     }
 
-    function freeze(el) {
-      // Elements that start in normal document flow (e.g. chips laid out in
-      // a flex bank list) must be pinned to absolute px coordinates before
-      // they can be dragged around freely. Pulling one out of the flow can
-      // shrink/reflow its flex container (fewer chips left in the row), which
-      // would silently shift el's own offsetParent underneath it — so a
-      // same-size invisible placeholder is left behind to hold that space.
-      if (getComputedStyle(el).position === 'absolute') return;
-      var rect = el.getBoundingClientRect();
-      var parent = el.offsetParent || document.body;
-      var parentRect = parent.getBoundingClientRect();
-
-      var placeholder = document.createElement('span');
-      placeholder.setAttribute('aria-hidden', 'true');
-      placeholder.style.display = getComputedStyle(el).display;
-      placeholder.style.width = rect.width + 'px';
-      placeholder.style.height = rect.height + 'px';
-      placeholder.style.visibility = 'hidden';
-      el.parentNode.insertBefore(placeholder, el);
-
-      el.style.position = 'absolute';
-      el.style.margin = '0';
-      el.style.left = (rect.left - parentRect.left) + 'px';
-      el.style.top = (rect.top - parentRect.top) + 'px';
-    }
-
-    function setStageClipping(disabled) {
-      // While a piece is being dragged it must be able to visually leave the
-      // map box (e.g. travel down to an answer list below it) — toggle off
-      // the stage's scroll-container clipping for the duration of the drag.
-      root.querySelectorAll('.ativ-stage-scroll').forEach(function (el) {
-        el.classList.toggle('is-dragging-active', disabled);
+    function rememberHome(el) {
+      if (homes.has(el)) return;
+      homes.set(el, {
+        parent: el.parentNode,
+        next: el.nextSibling,
+        style: el.getAttribute('style') || ''
       });
     }
 
     function onDown(e, el) {
       if (el.classList.contains('is-locked')) return;
       if (e.button != null && e.button !== 0) return; // left click / primary touch only
-      freeze(el);
-      active = el;
-      var p = point(e);
+      rememberHome(el);
+
       var rect = el.getBoundingClientRect();
-      var parentRect = el.offsetParent.getBoundingClientRect();
-      startLeft = rect.left - parentRect.left;
-      startTop = rect.top - parentRect.top;
+      var p = point(e);
       offsetX = p.clientX - rect.left;
       offsetY = p.clientY - rect.top;
-      el.classList.add('is-dragging');
+
+      // Move the piece to <body>, fixed-positioned in viewport coordinates,
+      // for the duration of the drag. This is what lets it travel freely
+      // over a map box or scroll container without ever being clipped by
+      // that container's overflow — and it sidesteps a nastier problem:
+      // toggling a container's overflow mid-drag (the previous approach)
+      // can show/hide its scrollbar and shift the whole page layout right
+      // under the cursor, silently invalidating every coordinate in flight.
+      active = el;
+      document.body.appendChild(el);
+      el.style.position = 'fixed';
+      el.style.margin = '0';
+      el.style.width = rect.width + 'px';
+      el.style.height = rect.height + 'px';
+      el.style.left = rect.left + 'px';
+      el.style.top = rect.top + 'px';
       el.style.zIndex = 9999;
-      setStageClipping(true);
+      el.classList.add('is-dragging');
       e.preventDefault();
     }
 
     function onMove(e) {
       if (!active) return;
       var p = point(e);
-      var parentRect = active.offsetParent.getBoundingClientRect();
-      var x = p.clientX - parentRect.left - offsetX;
-      var y = p.clientY - parentRect.top - offsetY;
-      active.style.left = x + 'px';
-      active.style.top = y + 'px';
+      active.style.left = (p.clientX - offsetX) + 'px';
+      active.style.top = (p.clientY - offsetY) + 'px';
       e.preventDefault();
     }
 
@@ -85,41 +71,66 @@
       return x * y;
     }
 
-    function onUp(e) {
+    function placeAt(el, targetRect) {
+      // el is currently position:fixed on <body>; convert the desired
+      // viewport rect into coordinates relative to el's eventual static
+      // parent, then drop it back into normal flow there.
+      var home = homes.get(el);
+      home.parent.insertBefore(el, home.next);
+      el.style.position = 'absolute';
+      var parentRect = el.offsetParent.getBoundingClientRect();
+      el.style.left = (targetRect.left - parentRect.left) + 'px';
+      el.style.top = (targetRect.top - parentRect.top) + 'px';
+      el.style.width = '';
+      el.style.height = '';
+    }
+
+    function onUp() {
       if (!active) return;
       var el = active;
       active = null;
       el.classList.remove('is-dragging');
       el.style.zIndex = '';
-      setStageClipping(false);
 
       var dragRect = el.getBoundingClientRect();
       var dragArea = dragRect.width * dragRect.height;
-      var best = null, bestArea = 0;
+      var dragCx = dragRect.left + dragRect.width / 2;
+      var dragCy = dragRect.top + dragRect.height / 2;
+
+      // Among zones the piece actually overlaps, pick the one whose CENTER
+      // is closest to the piece's center. Ranking by raw or fractional
+      // overlap area instead breaks down in two common cases: a huge target
+      // (e.g. a whole map shape) can out-score a tiny nearby chip target
+      // with only a sliver of overlap, and several same-size targets packed
+      // close together (e.g. a list of small answer boxes) can each claim a
+      // similar overlap fraction of a piece dropped near their shared edge.
+      // Center-to-center distance has neither problem.
+      var best = null, bestDist = Infinity;
       drops.forEach(function (dz) {
         if (dz.classList.contains('is-locked')) return;
-        var a = overlapArea(dragRect, dz.getBoundingClientRect());
-        if (a > bestArea) { bestArea = a; best = dz; }
+        var zoneRect = dz.getBoundingClientRect();
+        var overlap = overlapArea(dragRect, zoneRect);
+        if (overlap <= 0) return;
+        var zoneArea = zoneRect.width * zoneRect.height;
+        var fraction = overlap / Math.min(dragArea, zoneArea);
+        if (fraction < 0.2) return; // still require a meaningful overlap
+        var dist = Math.hypot(dragCx - (zoneRect.left + zoneRect.width / 2), dragCy - (zoneRect.top + zoneRect.height / 2));
+        if (dist < bestDist) { bestDist = dist; best = dz; }
       });
 
-      // Accept the drop as soon as roughly a fifth of the piece (or of the
-      // target, whichever is smaller — matters for the tiny map pins) sits
-      // over the right target. Real fingers and mice are imprecise.
-      var bestDzArea = best ? (function () { var r = best.getBoundingClientRect(); return r.width * r.height; })() : 0;
-      var threshold = 0.2 * Math.min(dragArea, bestDzArea || dragArea);
-      var isMatch = best && bestArea > threshold && best.dataset.drop === el.dataset.drag;
+      var isMatch = best && best.dataset.drop === el.dataset.drag;
 
       if (isMatch) {
-        var parentRect = el.offsetParent.getBoundingClientRect();
-        var dzRect = best.getBoundingClientRect();
-        el.style.left = (dzRect.left - parentRect.left) + 'px';
-        el.style.top = (dzRect.top - parentRect.top) + 'px';
+        placeAt(el, best.getBoundingClientRect());
         el.classList.add('is-locked', 'is-correct');
         best.classList.add('is-locked');
         checkDone();
       } else {
-        el.style.left = startLeft + 'px';
-        el.style.top = startTop + 'px';
+        // Missed — put it back exactly where it started: same parent, same
+        // spot in the sibling order, same inline style as before the drag.
+        var home = homes.get(el);
+        home.parent.insertBefore(el, home.next);
+        el.setAttribute('style', home.style);
       }
     }
 
