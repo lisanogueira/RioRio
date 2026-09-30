@@ -80,7 +80,7 @@ Todas as imagens em `assets/images/` foram baixadas do site oficial do projeto
 | Local | Origem (rj.riorio.com.br/wp-content/uploads/…) |
 |---|---|
 | capa-riorio.webp | 2025/11/RioRio-capa1-scaled.webp |
-| criu.png | 2023/07/criu_v4.png |
+| criu-animado.webp | Sequência oficial de seis poses do Criu fornecida para o site |
 | criu-prefeito.webp | 2026/01/prefeito_criu.webp |
 | era1-fundacao.webp | 2026/03/Primeira-Missa.webp |
 | era2-expansao.webp | 2025/11/FRANCESES-NA-GUANABARA_v2-scaled.webp |
