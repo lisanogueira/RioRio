@@ -62,7 +62,7 @@
     function pieceName(el) {
       var row = el.closest('.ativ-bank__row');
       var label = row && row.querySelector('.ativ-bank__label');
-      return (label ? label.textContent : el.textContent).trim() || 'peça';
+      return (el.getAttribute('data-label') || (label ? label.textContent : el.textContent)).trim() || 'peça';
     }
 
     function dropName(drop) {
@@ -75,7 +75,10 @@
       var done = root.querySelectorAll('[data-drag].is-correct').length;
       if (done >= requiredAnswers) {
         var banner = root.querySelector('[data-ativ-success]');
-        if (banner) banner.classList.add('is-visible');
+        if (banner) {
+          banner.classList.add('is-visible');
+          banner.removeAttribute('aria-hidden');
+        }
         announce('Parabéns! Você concluiu todos os ' + requiredAnswers + ' itens.');
       } else announce(done + ' de ' + requiredAnswers + ' itens corretos.', 'is-progress');
     }
@@ -176,6 +179,9 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tryDrop(selected, drop); }
       });
     });
+
+    var successBanner = root.querySelector('[data-ativ-success]');
+    if (successBanner) successBanner.setAttribute('aria-hidden', 'true');
 
     if (window.PointerEvent) {
       drags.forEach(function (el) { el.addEventListener('pointerdown', function (e) { onDown(e, el); }); });

@@ -120,11 +120,11 @@
 .drop-zone--answer.is-locked{ border-color:var(--verde); background:#eef7f1; }
 
 .ativ-success{
-  margin-top:1.2rem; padding:1rem 1.3rem; border-radius:var(--radius-lg);
+  margin-top:1.2rem; padding:0 1.3rem; border-radius:var(--radius-lg);
   background:var(--verde); color:#fff; font-weight:700; text-align:center;
-  opacity:0; max-height:0; overflow:hidden; transition:opacity .3s, max-height .3s;
+  opacity:0; max-height:0; overflow:hidden; visibility:hidden; transition:opacity .3s, max-height .3s, padding .3s;
 }
-.ativ-success.is-visible{ opacity:1; max-height:200px; padding:1rem 1.3rem; }
+.ativ-success.is-visible{ opacity:1; max-height:200px; padding:1rem 1.3rem; visibility:visible; }
 
 .ativ-actions{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.2rem; }
 .ativ-help{ margin:.2rem 0 1rem; padding:.75rem 1rem; border-left:4px solid var(--ciano); background:#eef9fa; color:var(--tinta-70); }
