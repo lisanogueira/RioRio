@@ -201,11 +201,12 @@
 
     galleries.forEach(function (gallery) {
       var gLinks = $$(".gallery__link", gallery);
-      gLinks.forEach(function (link, i) {
+      gLinks.forEach(function (link) {
         link.addEventListener("click", function (e) {
           e.preventDefault();
-          links = gLinks;      // ativa o conjunto desta galeria
-          open(i);
+          // ativa só as imagens visíveis desta galeria (respeita o filtro)
+          links = gLinks.filter(function (l) { return !l.parentNode.hidden; });
+          open(links.indexOf(link));
         });
       });
     });
@@ -215,6 +216,25 @@
     if (prevBtn) prevBtn.addEventListener("click", function () { show(current - 1); });
     if (nextBtn) nextBtn.addEventListener("click", function () { show(current + 1); });
   }
+
+  /* ---------- 8b. Filtros do acervo ---------- */
+  $$("[data-filter-group]").forEach(function (group) {
+    var grid = document.getElementById(group.getAttribute("data-filter-group"));
+    if (!grid) return;
+    var chips = $$("[data-filter]", group);
+    var items = $$("[data-cat]", grid);
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var f = chip.getAttribute("data-filter");
+        chips.forEach(function (c) {
+          var on = c === chip;
+          c.classList.toggle("is-active", on);
+          c.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        items.forEach(function (li) { li.hidden = f !== "all" && li.getAttribute("data-cat") !== f; });
+      });
+    });
+  });
 
   /* ---------- 9. Formulário -> WhatsApp ---------- */
   var form = $("[data-contact-form]");
