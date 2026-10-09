@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=14" />
-  <link rel="stylesheet" href="assets/css/atividades.css?v=14" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=15" />
+  <link rel="stylesheet" href="assets/css/atividades.css?v=15" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -77,6 +77,7 @@
 
         <div class="ativ-panel" data-drag-activity>
           <h2>Legenda: arraste o nome de cada via</h2>
+          <p class="ativ-instruction">Arraste o nome de cada via para a representação acima correspondente à do mapa.</p>
           <div class="ativ-answers">
             <div class="ativ-legend">
               <div class="ativ-legend__row"><span class="legend-sample legend-sample--brasil" aria-hidden="true"></span><span class="drop-zone drop-zone--answer" data-drop="brasil" aria-label="Destino da linha rosa" style="position:relative;width:180px;height:36px"></span></div>
@@ -87,12 +88,12 @@
           </div>
 
           <div class="ativ-bank">
-            <div class="ativ-bank__group">
+            <div class="ativ-bank__group ativ-bank__group--row">
               <h3>Nome das vias</h3>
-              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="brasil" style="position:relative">AVENIDA BRASIL</span></div>
-              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="amarela" style="position:relative">LINHA AMARELA</span></div>
               <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="vermelha" style="position:relative">LINHA VERMELHA</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="brasil" style="position:relative">AVENIDA BRASIL</span></div>
               <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="trem" style="position:relative">LINHAS DE TREM</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--chip" data-drag="amarela" style="position:relative">LINHA AMARELA</span></div>
             </div>
           </div>
 
@@ -142,7 +143,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=14" defer></script>
-  <script src="assets/js/atividades.js?v=14" defer></script>
+  <script src="assets/js/main.js?v=15" defer></script>
+  <script src="assets/js/atividades.js?v=15" defer></script>
 </body>
 </html>

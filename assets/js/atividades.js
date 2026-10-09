@@ -2,6 +2,44 @@
 (function () {
   'use strict';
 
+  function rotateNote() {
+    var note = document.createElement('p');
+    note.className = 'ativ-rotate';
+    note.textContent = 'Coloque o celular na horizontal para ver a imagem inteira.';
+    return note;
+  }
+
+  // Reduz o mapa para caber na largura da tela e, com o celular deitado, também na altura.
+  function fitStage(wrap) {
+    var stage = wrap.querySelector('.ativ-stage[data-fit-w]');
+    if (!stage) return;
+    var w = parseFloat(stage.getAttribute('data-fit-w')), h = parseFloat(stage.getAttribute('data-fit-h'));
+    function apply() {
+      var cs = window.getComputedStyle(wrap);
+      var padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+      var padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      var avail = wrap.clientWidth - padX;
+      var s = Math.min(1, avail / w);
+      if (window.innerWidth > window.innerHeight && window.innerHeight < 560) s = Math.min(s, (window.innerHeight - 100) / h);
+      s = Math.max(s, 0.2);
+      if (s < 0.999) {
+        stage.style.transformOrigin = '0 0';
+        stage.style.transform = 'scale(' + s + ')';
+        stage.style.marginLeft = Math.max(0, (avail - w * s) / 2) + 'px';
+        wrap.style.height = (h * s + padY) + 'px';
+        wrap.style.overflow = 'hidden';
+      } else {
+        stage.style.transform = '';
+        stage.style.marginLeft = '';
+        wrap.style.height = '';
+        wrap.style.overflow = '';
+      }
+    }
+    apply();
+    window.addEventListener('resize', apply);
+    window.addEventListener('orientationchange', function () { window.setTimeout(apply, 250); });
+  }
+
   function initDragActivity(root) {
     var drags = Array.prototype.slice.call(root.querySelectorAll('[data-drag]'));
     var drops = Array.prototype.slice.call(root.querySelectorAll('[data-drop]'));
@@ -15,8 +53,11 @@
     var help = document.createElement('p');
     help.className = 'ativ-help';
     help.textContent = 'Arraste uma peça até o local correto ou selecione a peça e depois selecione o destino.';
-    var firstInteractive = root.querySelector('.ativ-stage-scroll, .ativ-bank, .ativ-answers');
-    if (firstInteractive) root.insertBefore(help, firstInteractive);
+    var firstInteractive = root.querySelector('.ativ-instruction, .ativ-stage-scroll, .ativ-bank, .ativ-answers');
+    if (firstInteractive) {
+      root.insertBefore(help, firstInteractive);
+      root.insertBefore(rotateNote(), firstInteractive);
+    }
 
     var status = document.createElement('p');
     status.className = 'ativ-status';
@@ -83,7 +124,28 @@
       } else announce(done + ' de ' + requiredAnswers + ' itens corretos.', 'is-progress');
     }
 
+    function placeCopyInDrop(el, drop) {
+      // a peça da legenda permanece onde está; uma cópia fica no mapa
+      var copy = el.cloneNode(true);
+      ['data-drag', 'data-clone', 'tabindex', 'role', 'aria-pressed', 'aria-label'].forEach(function (a) { copy.removeAttribute(a); });
+      copy.classList.remove('is-dragging', 'is-selected', 'is-correct');
+      copy.classList.add('is-locked', 'is-placed');
+      copy.setAttribute('aria-hidden', 'true');
+      drop.appendChild(copy);
+      el.classList.remove('is-dragging', 'is-selected');
+      el.classList.add('is-locked', 'is-correct', 'is-used');
+      el.setAttribute('aria-pressed', 'false');
+      el.setAttribute('tabindex', '-1');
+      drop.classList.add('is-locked');
+      drop.setAttribute('tabindex', '-1');
+      drop.setAttribute('aria-disabled', 'true');
+      selected = null;
+      announce('Correto: ' + pieceName(el) + ' em ' + dropName(drop) + '.', 'is-progress');
+      checkDone();
+    }
+
     function placeInDrop(el, drop) {
+      if (el.hasAttribute('data-clone')) { placeCopyInDrop(el, drop); return; }
       rememberHome(el);
       var backgroundImage = el.style.backgroundImage;
       drop.appendChild(el);
@@ -214,6 +276,8 @@
   }
 
   function initRevealActivity(root) {
+    var tabsBar = root.querySelector('.reveal-tabs');
+    if (tabsBar) root.insertBefore(rotateNote(), tabsBar);
     var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-reveal-tab]'));
     var panels = Array.prototype.slice.call(root.querySelectorAll('[data-reveal-panel]'));
     function activateTab(tab) {
@@ -255,6 +319,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-fit]').forEach(fitStage);
     document.querySelectorAll('[data-drag-activity]').forEach(initDragActivity);
     document.querySelectorAll('[data-reveal-activity]').forEach(initRevealActivity);
     document.querySelectorAll('[data-ativ-reset]').forEach(function (btn) {

@@ -743,3 +743,31 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 }
 .press-link .kicker{ margin:0; }
 .press-link__text{ margin:0; max-width:52ch; font-size:1.05rem; color:var(--tinta-70); }
+
+/* ===== Revisão da autora (out/2026): série, vídeos e fotografias ===== */
+.atv-series__sub{ font-family:var(--ff-display); font-size:1.05rem; margin:1.2rem 0 .5rem; color:var(--tinta); }
+.memorias{ background:var(--papel); }
+.memorias__media{ margin-top:1rem; }
+.mem__subtitle{ font-family:var(--ff-display); font-size:1.35rem; margin:0 0 .3rem; color:var(--tinta); }
+.mem__subtext{ margin:0 0 1.1rem; color:var(--tinta-70); max-width:60ch; }
+.video-grid{ list-style:none; margin:0 0 clamp(2rem,4vw,3rem); padding:0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
+.video-card a{
+  display:flex; flex-direction:column; height:100%; text-decoration:none; color:var(--tinta);
+  background:#fff; border:1px solid var(--linha); border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow-sm); transition:transform .2s var(--ease), box-shadow .2s;
+}
+.video-card a:hover, .video-card a:focus-visible{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.video-card__thumb{ position:relative; display:block; aspect-ratio:16/9; background:#1f5f85 center/cover; overflow:hidden; }
+.video-card__thumb img{ width:100%; height:100%; object-fit:cover; }
+.video-card__play{
+  position:absolute; left:50%; top:50%; width:3.2rem; height:3.2rem; margin:-1.6rem 0 0 -1.6rem;
+  border-radius:50%; background:rgba(193,31,91,.92); box-shadow:0 4px 12px rgba(0,0,0,.35);
+}
+.video-card__play::after{
+  content:""; position:absolute; left:1.2rem; top:.95rem; border-left:1.05rem solid #fff;
+  border-top:.65rem solid transparent; border-bottom:.65rem solid transparent;
+}
+.video-card__body{ display:flex; flex-direction:column; gap:.25rem; padding:.8rem 1rem 1rem; }
+.video-card__year{ font-weight:700; font-size:.78rem; letter-spacing:.06em; color:var(--rosa); }
+.video-card__title{ font-weight:600; font-size:.95rem; line-height:1.3; }
+.memorias .photo-grid__item .gallery__link{ box-shadow:var(--shadow-sm); }

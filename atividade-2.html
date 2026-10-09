@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=14" />
-  <link rel="stylesheet" href="assets/css/atividades.css?v=14" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=15" />
+  <link rel="stylesheet" href="assets/css/atividades.css?v=15" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -71,15 +71,16 @@
 
         <div class="ativ-panel" data-drag-activity>
           <h2>Mapa do município do Rio de Janeiro</h2>
-          <div class="ativ-stage-scroll">
-            <div class="ativ-stage" style="width:990px;height:521px;background-image:url('assets/images/atividades/atividade-1-2.jpg')">
+          <p class="ativ-instruction">Arraste o nome, o número e o contorno para o local correto no mapa, conforme apresentado abaixo.</p>
+          <div class="ativ-stage-scroll" data-fit>
+            <div class="ativ-stage" data-fit-w="990" data-fit-h="521" style="width:990px;height:521px;background-image:url('assets/images/atividades/atividade-1-2.jpg')">
               <span class="drop-zone is-visible-hint" data-drop="guanabara" style="left:752px;top:101px;width:140px;height:22px"></span>
               <span class="drop-zone is-visible-hint" data-drop="atlantico" style="left:743px;top:433px;width:140px;height:22px"></span>
               <span class="drop-zone is-visible-hint" data-drop="sepetiba" style="left:24px;top:400px;width:140px;height:22px"></span>
 
-              <span class="drop-zone is-visible-hint" data-drop="num-gericino" style="left:340px;top:150px;width:34px;height:34px"></span>
-              <span class="drop-zone is-visible-hint" data-drop="num-tijuca" style="left:638px;top:338px;width:34px;height:34px"></span>
-              <span class="drop-zone is-visible-hint" data-drop="num-pedrabranca" style="left:382px;top:365px;width:34px;height:34px"></span>
+              <span class="drop-zone drop-zone--black is-visible-hint" data-drop="num-gericino" style="left:340px;top:150px;width:34px;height:34px"></span>
+              <span class="drop-zone drop-zone--black is-visible-hint" data-drop="num-tijuca" style="left:638px;top:338px;width:34px;height:34px"></span>
+              <span class="drop-zone drop-zone--black is-visible-hint" data-drop="num-pedrabranca" style="left:382px;top:365px;width:34px;height:34px"></span>
 
               <span class="drop-zone" data-drop="shape-pedrabranca" style="left:255px;top:256px;width:274px;height:246px"></span>
               <span class="drop-zone" data-drop="shape-gericino" style="left:238px;top:102px;width:241px;height:131px"></span>
@@ -96,9 +97,9 @@
             </div>
             <div class="ativ-bank__group">
               <h3>Arraste o número de cada maciço</h3>
-              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-gericino" style="position:relative">1</span><span class="ativ-bank__label">Maciço de Gericinó</span></div>
-              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-tijuca" style="position:relative">2</span><span class="ativ-bank__label">Maciço da Tijuca</span></div>
-              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-pedrabranca" style="position:relative">3</span><span class="ativ-bank__label">Maciço da Pedra Branca</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-gericino" data-clone style="position:relative">1</span><span class="ativ-bank__label">Maciço de Gericinó</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-tijuca" data-clone style="position:relative">2</span><span class="ativ-bank__label">Maciço da Tijuca</span></div>
+              <div class="ativ-bank__row"><span class="drag-item drag-item--num" data-drag="num-pedrabranca" data-clone style="position:relative">3</span><span class="ativ-bank__label">Maciço da Pedra Branca</span></div>
             </div>
             <div class="ativ-bank__group">
               <h3>Arraste cada contorno</h3>
@@ -156,7 +157,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=14" defer></script>
-  <script src="assets/js/atividades.js?v=14" defer></script>
+  <script src="assets/js/main.js?v=15" defer></script>
+  <script src="assets/js/atividades.js?v=15" defer></script>
 </body>
 </html>
