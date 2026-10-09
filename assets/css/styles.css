@@ -735,3 +735,11 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .schools__photos li:nth-child(2) img{ transform:rotate(1.2deg); }
 .schools__photos li:nth-child(1) img{ transform:rotate(-1.2deg); }
 @media (max-width:600px){ .schools__photos{ grid-template-columns:1fr; } .schools__photos li:nth-child(n+3){ display:none; } }
+
+.press-link{
+  margin-top:clamp(1.6rem,4vw,2.6rem); padding:clamp(1.2rem,3vw,1.8rem); text-align:center;
+  background:#fff; border:1px solid var(--linha); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);
+  display:grid; justify-items:center; gap:.7rem;
+}
+.press-link .kicker{ margin:0; }
+.press-link__text{ margin:0; max-width:52ch; font-size:1.05rem; color:var(--tinta-70); }
