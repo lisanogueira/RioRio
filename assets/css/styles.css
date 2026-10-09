@@ -37,7 +37,7 @@
   --ciano:      #0E7C8B;   /* cor institucional predominante */
   --ciano-esc:  #0A5A66;   /* ciano para texto/link (AA) */
   --ciano-cl:   #16A0B2;   /* ciano claro, só gráfico */
-  --azul:       #123C8C;   /* azul intenso */
+  --azul:       #2F6FD0;   /* azul médio, mais claro */
 
   /* Acentos (≈15%) */
   --amarelo:    #F6C744;   /* descoberta — fundos/realces (mais claro) */
@@ -47,8 +47,8 @@
   --laranja:    #D9642A;
 
   /* superfícies escuras (Caminhos / Escolas) */
-  --escuro:     #0C2233;
-  --escuro-2:   #0f2c40;
+  --escuro:     #1F5F85;
+  --escuro-2:   #2A6E96;
 
   --maxw: 1200px;
   --gap: clamp(1rem, 3vw, 2rem);
@@ -117,7 +117,7 @@ p{ margin:0 0 1em; }
 .section-title{ font-size:clamp(1.9rem, 1.3rem + 2.6vw, 3.1rem); }
 .section-title--light{ color:#fff; }
 .section-sub{ color:var(--tinta-70); font-size:1.08rem; margin-top:.9rem; }
-.section-sub--light{ color:#c7d6e0; }
+.section-sub--light{ color:#e1edf4; }
 
 .lede{ font-size:1.12rem; }
 .handnote{ font-family:var(--ff-hand); font-size:1.35rem; color:var(--rosa); line-height:1.1; }
@@ -359,7 +359,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
   overflow:hidden; transition:transform .2s var(--ease), box-shadow .2s, border-color .2s;
 }
 .route__link:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--rc); }
-.route__img{ position:relative; display:block; aspect-ratio:16/10; overflow:hidden; background:#0a1c2b; }
+.route__img{ position:relative; display:block; aspect-ratio:16/10; overflow:hidden; background:#1b4f70; }
 .route__img img{ width:100%; height:100%; object-fit:cover; transition:transform .4s var(--ease); }
 .route__link:hover .route__img img{ transform:scale(1.05); }
 .route__flag{
@@ -371,7 +371,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .route__body::before{ content:""; position:absolute; left:0; top:0; width:100%; height:4px; background:var(--rc); }
 .route__n{ font-family:var(--ff-display); font-weight:700; color:var(--rc); font-size:.95rem; filter:brightness(1.5); }
 .route__name{ font-family:var(--ff-display); font-weight:600; font-size:1.15rem; line-height:1.15; }
-.route__desc{ color:#b9c9d4; font-size:.9rem; }
+.route__desc{ color:#e1edf4; font-size:.9rem; }
 
 .caminhos__cta{
   margin-top:clamp(2rem,5vw,3.4rem); display:grid; grid-template-columns:auto 1fr; gap:clamp(1.5rem,4vw,3rem); align-items:center;
@@ -381,7 +381,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .caderno img{ border-radius:8px; box-shadow:var(--shadow-lg); transform:rotate(-3deg); border:5px solid #fff; }
 .caderno figcaption{ position:absolute; bottom:-1.4rem; left:0; transform:rotate(-3deg); color:var(--amarelo-cl); }
 .caminhos__cta-text h3{ font-size:clamp(1.4rem,1.1rem+1.4vw,2rem); color:#fff; margin-bottom:.5rem; }
-.caminhos__cta-text p{ color:#c7d6e0; max-width:46ch; }
+.caminhos__cta-text p{ color:#e1edf4; max-width:46ch; }
 
 /* ---------- 10b. ATIVIDADES ---------- */
 .activities{ background:var(--papel); }
@@ -585,14 +585,14 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .contact__form-status{ margin:.9rem 0 0; font-weight:600; color:var(--verde); min-height:1.4em; }
 
 /* ---------- 16. FOOTER ---------- */
-.site-footer{ background:var(--escuro); color:#c7d6e0; padding-top:clamp(2.5rem,5vw,3.5rem); }
+.site-footer{ background:var(--escuro); color:#e1edf4; padding-top:clamp(2.5rem,5vw,3.5rem); }
 .site-footer__inner{ display:grid; grid-template-columns:1.4fr 1fr 1.4fr; gap:clamp(1.5rem,4vw,3rem); padding-bottom:2.2rem; }
 .site-footer h2{ font-family:var(--ff-sans); font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:#8fe0ec; margin:0 0 1rem; }
 .brand__mark--footer{ font-size:2rem; color:#fff; }
 .site-footer__brand p{ margin:.6rem 0 0; max-width:32ch; }
 .site-footer__motto{ color:var(--amarelo-cl); font-size:1.3rem; margin-top:.8rem; }
 .site-footer__nav ul, .social{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; }
-.site-footer a{ color:#c7d6e0; text-decoration:none; transition:color .2s; }
+.site-footer a{ color:#e1edf4; text-decoration:none; transition:color .2s; }
 .site-footer a:hover{ color:#fff; text-decoration:underline; }
 .site-footer__contact p{ margin:0 0 .6rem; line-height:1.5; }
 .social{ margin-top:1rem; grid-auto-flow:column; justify-content:start; gap:1rem; }
@@ -708,7 +708,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 /* ---------- Caminhos: cadernos e fotos dos passeios + filtros do acervo ---------- */
 .caminhos__media{ margin-top:clamp(2.2rem,5vw,3.6rem); }
 .caminhos__subtitle{ font-family:var(--ff-display); font-size:1.35rem; margin:0 0 .3rem; color:#fff; }
-.caminhos__subtext{ margin:0 0 1.1rem; color:#b9c9d4; max-width:60ch; }
+.caminhos__subtext{ margin:0 0 1.1rem; color:#e1edf4; max-width:60ch; }
 .photo-grid{ list-style:none; margin:0 0 clamp(2rem,4vw,3rem); padding:0; display:grid; gap:.8rem; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); }
 .photo-grid--cadernos{ grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
 .photo-grid__item .gallery__link{ border-width:4px; border-radius:10px; transform:none; background:#fff; }
