@@ -132,12 +132,24 @@
       e.preventDefault();
     }
 
+    var lastY = 0, scrollTimer = 0;
+    function autoScroll() {
+      if (!active) { scrollTimer = 0; return; }
+      var edge = 70, step = 0;
+      if (lastY > window.innerHeight - edge) step = Math.ceil((lastY - (window.innerHeight - edge)) / 5);
+      else if (lastY < edge) step = -Math.ceil((edge - lastY) / 5);
+      if (step) window.scrollBy(0, step);
+      scrollTimer = window.requestAnimationFrame(autoScroll);
+    }
+
     function onMove(e) {
       if (!active) return;
       var p = point(e);
       if (Math.hypot(p.clientX - startX, p.clientY - startY) > 5) moved = true;
       active.style.left = (p.clientX - offsetX) + 'px';
       active.style.top = (p.clientY - offsetY) + 'px';
+      lastY = p.clientY;
+      if (moved && !scrollTimer) scrollTimer = window.requestAnimationFrame(autoScroll);
       e.preventDefault();
     }
 
