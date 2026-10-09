@@ -546,7 +546,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 /* ---------- 14. ENCERRAMENTO ---------- */
 .closing{ background:var(--tinta); color:#fff; text-align:center; overflow:hidden; }
 .closing__inner{ display:grid; justify-items:center; gap:1.5rem; }
-.closing__criu{ margin:0; width:clamp(7rem,16vw,10rem); overflow:hidden; border-radius:50%; background:#fff; }
+.closing__criu{ margin:0; width:clamp(7rem,16vw,10rem); }
 .closing__criu img{ filter:drop-shadow(0 12px 18px rgba(0,0,0,.35)); }
 .closing__quote{
   font-family:var(--ff-display); font-style:italic; font-weight:600;
