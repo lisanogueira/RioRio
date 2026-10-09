@@ -27,7 +27,7 @@
   <!-- LCP: preload the hero cover -->
   <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -649,129 +649,148 @@
               <img src="assets/images/cadernos/pag-cristo-t.webp" width="560" height="420" loading="lazy" decoding="async" alt="Página do caderno: estrutura e forma do monumento do Cristo Redentor.">
             </a>
           </li>
+                    <li class="photo-grid__item">
+            <a class="gallery__link" href="assets/images/cadernos/pag-paisagem.webp"
+               data-caption="Página do caderno: &quot;Analisando a paisagem&quot;, vista do lado direito do Cristo com legenda para identificar os pontos da cidade.">
+              <img src="assets/images/cadernos/pag-paisagem-t.webp" width="560" height="420" loading="lazy" decoding="async" alt="Página do caderno do Roteiro 4: Analisando a paisagem.">
+            </a>
+          </li>
           </ul>
 
           <h3 class="caminhos__subtitle">Passeios em ação</h3>
           <p class="caminhos__subtext">Registros de turmas de escolas da rede pública nos passeios-aula do Caminhos do Rio.</p>
-          <ul class="photo-grid" role="list" data-gallery>
-          <li class="photo-grid__item">
+          <div class="chips chips--dark" role="group" aria-label="Filtrar as fotos dos passeios" data-filter-group="passeios-grid">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Todas</button>
+            <button class="chip" type="button" data-filter="centro" aria-pressed="false">Centro histórico e igrejas</button>
+            <button class="chip" type="button" data-filter="fortaleza" aria-pressed="false">Fortaleza de São João</button>
+            <button class="chip" type="button" data-filter="cristo" aria-pressed="false">Cristo Redentor</button>
+            <button class="chip" type="button" data-filter="natureza" aria-pressed="false">Jardim Botânico, Zoo e Criu</button>
+          </div>
+          <ul class="photo-grid" role="list" data-gallery id="passeios-grid">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/chafariz.webp"
                data-caption="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
               <img src="assets/images/passeios/chafariz-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="cristo">
             <a class="gallery__link" href="assets/images/passeios/cristo.webp"
                data-caption="Alunos preenchem o caderno de atividades no alto do Corcovado.">
               <img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="fortaleza">
             <a class="gallery__link" href="assets/images/passeios/fortaleza-canhao.webp"
                data-caption="Observando um canhão antigo na Fortaleza de São João.">
               <img src="assets/images/passeios/fortaleza-canhao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Observando um canhão antigo na Fortaleza de São João.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="fortaleza">
             <a class="gallery__link" href="assets/images/passeios/fortaleza-portao.webp"
                data-caption="Turma na entrada da Fortaleza de São João.">
               <img src="assets/images/passeios/fortaleza-portao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na entrada da Fortaleza de São João.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/lapa-rua.webp"
                data-caption="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
               <img src="assets/images/passeios/lapa-rua-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/lapa-igreja.webp"
                data-caption="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
               <img src="assets/images/passeios/lapa-igreja-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/travessa-comercio.webp"
                data-caption="Turma na Travessa do Comércio, Centro do Rio.">
               <img src="assets/images/passeios/travessa-comercio-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na Travessa do Comércio, Centro do Rio.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/gloria-azulejos.webp"
                data-caption="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
               <img src="assets/images/passeios/gloria-azulejos-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/igreja-interior.webp"
                data-caption="Atividade dentro de uma igreja colonial do Centro.">
               <img src="assets/images/passeios/igreja-interior-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Atividade dentro de uma igreja colonial do Centro.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/caminhos-banner.webp"
                data-caption="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
               <img src="assets/images/passeios/caminhos-banner-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="cristo">
             <a class="gallery__link" href="assets/images/passeios/escada-rolante.webp"
                data-caption="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
               <img src="assets/images/passeios/escada-rolante-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/ciep-gilberto.webp"
                data-caption="Alunos do CIEP Gilberto Freire comemoram o passeio.">
               <img src="assets/images/passeios/ciep-gilberto-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Gilberto Freire comemoram o passeio.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/gastao-4728.webp"
                data-caption="Alunos da E. M. Gastão Penalva em igreja histórica.">
               <img src="assets/images/passeios/gastao-4728-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva em igreja histórica.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/gastao-4918.webp"
                data-caption="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
               <img src="assets/images/passeios/gastao-4918-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7118.webp"
                data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
               <img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="centro">
             <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7143.webp"
                data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
               <img src="assets/images/passeios/ciep-francisco-7143-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="natureza">
             <a class="gallery__link" href="assets/images/passeios/zoo-1.webp"
                data-caption="Aula de campo no Jardim Zoológico.">
               <img src="assets/images/passeios/zoo-1-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Aula de campo no Jardim Zoológico.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="natureza">
             <a class="gallery__link" href="assets/images/passeios/zoo-2.webp"
                data-caption="Registrando o que vê: aula de campo no Jardim Zoológico.">
               <img src="assets/images/passeios/zoo-2-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Registrando o que vê: aula de campo no Jardim Zoológico.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="natureza">
             <a class="gallery__link" href="assets/images/passeios/jb-grupo.webp"
                data-caption="Turma reunida junto às árvores gigantes do Jardim Botânico.">
               <img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico.">
             </a>
           </li>
-          <li class="photo-grid__item">
+          <li class="photo-grid__item" data-cat="natureza">
             <a class="gallery__link" href="assets/images/passeios/jb-folhas.webp"
                data-caption="Crianças observam as plantas no Jardim Botânico.">
               <img src="assets/images/passeios/jb-folhas-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Crianças observam as plantas no Jardim Botânico.">
+            </a>
+          </li>
+                    <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/criu-mascote.webp"
+               data-caption="As crianças fazem carinho no Criu Carioca, mascote do projeto.">
+              <img src="assets/images/passeios/criu-mascote-t.webp" width="400" height="300" loading="lazy" decoding="async" alt="Duas crianças fazem carinho no Criu Carioca, mascote do projeto.">
             </a>
           </li>
           </ul>
@@ -826,7 +845,7 @@
           <li class="gallery__item" data-cat="premios">
             <a class="gallery__link" href="assets/images/premio-iab.webp"
                data-caption="Prêmio do Instituto dos Arquitetos do Brasil (IAB), 1992.">
-              <img src="assets/images/premio-iab.webp" width="420" height="300" loading="lazy" decoding="async" alt="Documento do prêmio do IAB concedido ao RioRio.">
+              <img src="assets/images/premio-iab.webp" width="542" height="750" loading="lazy" decoding="async" alt="Documento do prêmio do IAB concedido ao RioRio.">
               <span class="gallery__tag">Prêmio IAB · 1992</span>
             </a>
           </li>
@@ -847,7 +866,7 @@
           <li class="gallery__item" data-cat="premios">
             <a class="gallery__link" href="assets/images/premio-camara.webp"
                data-caption="Prêmio da Câmara Municipal da Cidade — 10/12/2003.">
-              <img src="assets/images/premio-camara.webp" width="420" height="300" loading="lazy" decoding="async" alt="Documento do prêmio da Câmara Municipal do Rio.">
+              <img src="assets/images/premio-camara.webp" width="420" height="307" loading="lazy" decoding="async" alt="Documento do prêmio da Câmara Municipal do Rio.">
               <span class="gallery__tag">Prêmio Câmara · 2003</span>
             </a>
           </li>
@@ -1157,6 +1176,12 @@
             de aula às aulas de campo pela cidade.
           </p>
         </div>
+        <ul class="schools__photos" role="list" data-reveal>
+          <li><img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja, com o caderno de atividades."></li>
+          <li><img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado."></li>
+          <li><img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico."></li>
+        </ul>
+
         <ul class="schools__grid" role="list" data-reveal>
           <li class="scard"><h3>Adoção do livro</h3><p>RioRio como atividade complementar de História e Geografia, do 3º ao 5º ano.</p></li>
           <li class="scard"><h3>Passeios culturais</h3><p>Dez roteiros de aulas de campo pelo patrimônio histórico e artístico do Rio.</p></li>
@@ -1319,6 +1344,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=8" defer></script>
+  <script src="assets/js/main.js?v=9" defer></script>
 </body>
 </html>

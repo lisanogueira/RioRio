@@ -725,3 +725,13 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .chip:hover{ background:#e6f6f8; }
 .chip.is-active{ background:var(--ciano); color:#fff; }
 .chip:focus-visible{ outline:3px solid var(--amarelo); outline-offset:2px; }
+
+.chips--dark .chip{ background:transparent; color:#fff; border-color:rgba(255,255,255,.55); }
+.chips--dark .chip:hover{ background:rgba(255,255,255,.14); }
+.chips--dark .chip.is-active{ background:var(--amarelo); border-color:var(--amarelo); color:var(--tinta); }
+.photo-grid__item[hidden]{ display:none; }
+.schools__photos{ list-style:none; margin:0 auto clamp(1.6rem,3vw,2.4rem); padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; max-width:62rem; }
+.schools__photos img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:12px; border:4px solid #fff; box-shadow:var(--shadow-md); }
+.schools__photos li:nth-child(2) img{ transform:rotate(1.2deg); }
+.schools__photos li:nth-child(1) img{ transform:rotate(-1.2deg); }
+@media (max-width:600px){ .schools__photos{ grid-template-columns:1fr; } .schools__photos li:nth-child(n+3){ display:none; } }
