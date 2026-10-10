@@ -771,3 +771,12 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .video-card__year{ font-weight:700; font-size:.78rem; letter-spacing:.06em; color:var(--rosa); }
 .video-card__title{ font-weight:600; font-size:.95rem; line-height:1.3; }
 .memorias .photo-grid__item .gallery__link{ box-shadow:var(--shadow-sm); }
+
+/* ===== vídeos hospedados no site + âncora "O livro" ===== */
+#livro-imagem{ scroll-margin-top:96px; }
+.video-card--file{
+  display:flex; flex-direction:column; background:#fff; border:1px solid var(--linha); border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--shadow-sm);
+}
+.video-card--file video{ display:block; width:100%; aspect-ratio:16/9; background:#000; object-fit:contain; }
+.video-card--file .video-card__title{ margin:0; padding:.8rem 1rem 1rem; }

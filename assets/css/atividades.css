@@ -208,7 +208,7 @@
 }
 
 /* imagens históricas (páginas imagem-historica-N) */
-.hist-page p{ line-height:1.65; max-width:78ch; }
+.hist-page p{ line-height:1.65; max-width:none; }
 .hist-viewer{ margin-top:1rem; }
 .hist-viewer__img{ position:relative; display:block; border-radius:12px; overflow:hidden; border:6px solid #fff; box-shadow:var(--shadow-sm); cursor:zoom-in; }
 .hist-viewer__img img{ width:100%; height:auto; display:block; }

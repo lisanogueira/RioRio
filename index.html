@@ -27,7 +27,7 @@
   <!-- LCP: preload the hero cover -->
   <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=15" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=16" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -77,7 +77,7 @@
           <span class="nav__toggle-label">Menu</span>
         </button>
         <ul class="nav__menu" id="nav-menu" data-nav-menu>
-          <li><a href="#livro">O livro</a></li>
+          <li><a href="#livro-imagem">O livro</a></li>
           <li><a href="#atividades">Atividades</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#acervo">Acervo</a></li>
@@ -120,7 +120,7 @@
             à mão livre — <strong>da Colônia ao ano&nbsp;2000</strong>.
           </p>
           <div class="hero__actions" data-reveal>
-            <a class="btn btn--cyan" href="#livro">Conheça o livro</a>
+            <a class="btn btn--cyan" href="#livro-imagem">Conheça o livro</a>
             <a class="btn btn--ghost" href="#escolas">Adote na sua escola</a>
           </div>
         </div>
@@ -181,7 +181,7 @@
           </p>
         </header>
 
-        <div class="book-showcase__grid">
+        <div class="book-showcase__grid" id="livro-imagem">
           <div class="book-showcase__media" data-reveal>
             <figure class="collage">
               <img class="collage__main" src="assets/images/comic-transferencia.webp"
@@ -261,7 +261,7 @@
             <div class="tl__text">
               <p class="tl__years">1500 – 1567</p>
               <h3 class="tl__name">Fundação da cidade</h3>
-              <p>Da chegada dos europeus à Baía de Guanabara à fundação por Estácio de Sá, junto ao
+              <p>Da chegada dos europeus à Baía de Guanabara à fundação da cidade por Estácio de Sá, junto ao
                  Morro Cara de Cão, e à mudança da cidade para o Morro do Castelo — onde o Rio começou a crescer.</p>
             </div>
           </article>
@@ -293,7 +293,7 @@
             <div class="tl__text">
               <p class="tl__years">1808 – 1904</p>
               <h3 class="tl__name">Crescimento urbano do século XIX</h3>
-              <p>A cidade se moderniza: a iluminação a gás, as primeiras indústrias, estradas de ferro
+              <p>A cidade se moderniza: a iluminação a gás, as primeiras indústrias, as estradas de ferro
                  e linhas de bonde, e as epidemias que justificarão uma grande reforma urbana.</p>
             </div>
           </article>
@@ -352,8 +352,8 @@
           <div>
             <p class="atv-redirect__kicker">Atividades na escola</p>
             <p class="atv-redirect__text">
-              Cinco atividades completas de arrastar e clicar, uma para cada mapa da história ou imagem histórica do Rio —
-              para usar nos computadores da escola, antes ou depois do passeio.
+              Atividades completas, de arrastar e clicar, com mapas e imagens históricas da cidade, para uma boa análise,
+              e mais um texto ilustrado! É para usar nos computadores da escola, antes ou depois do passeio.
             </p>
           </div>
           <a class="btn btn--cyan" href="atividade-1.html">Ir para as atividades na escola →</a>
@@ -565,7 +565,7 @@
 
         <div class="caminhos__media" data-reveal>
           <h3 class="caminhos__subtitle">Os cadernos de atividades</h3>
-          <p class="caminhos__subtext">Cada roteiro tem um caderno ilustrado para a criança desenhar, observar e responder durante o passeio. Clique para ampliar.</p>
+          <p class="caminhos__subtext">Cada roteiro tem um caderno ilustrado para a criança desenhar, observar e responder durante o passeio e, depois, em sala de aula. Veja alguns exemplos. Clique para ampliar.</p>
           <ul class="photo-grid photo-grid--cadernos" role="list" data-gallery>
           <li class="photo-grid__item">
             <a class="gallery__link" href="assets/images/cadernos/cap-roteiro1.webp"
@@ -631,7 +631,7 @@
             <figcaption class="handnote">um caderno para cada roteiro</figcaption>
           </figure>
           <div class="caminhos__cta-text">
-            <h3>Leve a sua turma para a rua</h3>
+            <h3>Leve a sua turma para a rua: aulas de campo do projeto Caminhos do Rio!</h3>
             <p>O projeto traz história, arquitetura e arte dos espaços do Rio para as aulas de
                História, Arte e Geografia do Ensino Fundamental.</p>
             <div class="btn-row">
@@ -797,13 +797,6 @@
             </a>
           </li>
           <li class="gallery__item gallery__item--tall" data-cat="jornais">
-            <a class="gallery__link" href="assets/images/acervo/og-2003.webp"
-               data-caption="Recorte do jornal O Globo sobre a história do Rio nos arredores do Cristo.">
-              <img src="assets/images/acervo/og-2003-t.webp" width="108" height="520" loading="lazy" decoding="async" alt="Recorte do jornal O Globo sobre a história do Rio nos arredores do Cristo.">
-              <span class="gallery__tag">O Globo · 2003</span>
-            </a>
-          </li>
-          <li class="gallery__item gallery__item--tall" data-cat="jornais">
             <a class="gallery__link" href="assets/images/acervo/jb-2001.webp"
                data-caption="Jornal do Brasil, 06/05/2001: &quot;Aula ao ar livre&quot;.">
               <img src="assets/images/acervo/jb-2001-t.webp" width="220" height="520" loading="lazy" decoding="async" alt="Jornal do Brasil, 06/05/2001: &quot;Aula ao ar livre&quot;.">
@@ -959,54 +952,61 @@
 
         <div class="memorias__media" data-reveal>
           <h3 class="mem__subtitle">Vídeos das escolas</h3>
-          <p class="mem__subtext">Os vídeos abrem no YouTube, em outra aba.</p>
+          <p class="mem__subtext">Toque no vídeo para assistir.</p>
           <ul class="video-grid" role="list">
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=mrKdBTNWBy0" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Apresentação do projeto aos professores">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/mrKdBTNWBy0/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2011</span><span class="video-card__title">Apresentação do projeto aos professores</span></span>
-            </a>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/apresentacao-professores-2011.jpg" aria-label="Apresentação do projeto aos professores">
+              <source src="assets/videos/apresentacao-professores-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Apresentação do projeto aos professores</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/rostham-uruguai-2011.jpg" aria-label="Passeio cultural (E.M. Rostham Pedro de Farias e E.M. Uruguai)">
+              <source src="assets/videos/rostham-uruguai-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural (E.M. Rostham Pedro de Farias e E.M. Uruguai)</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/dunshee-abranches-2011.jpg" aria-label="Passeio cultural (E.M. Dunshee de Abranches)">
+              <source src="assets/videos/dunshee-abranches-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural (E.M. Dunshee de Abranches)</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/professores-2015.jpg" aria-label="Passeios com professores">
+              <source src="assets/videos/professores-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeios com professores</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/atenas-alexandre-farah-2015.jpg" aria-label="Passeio cultural (E.M. Atenas e E.M. Alexandre Farah)">
+              <source src="assets/videos/atenas-alexandre-farah-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural (E.M. Atenas e E.M. Alexandre Farah)</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/urani-ceara-2015.jpg" aria-label="Passeio cultural (E.M. André Urani e E.M. Ceará)">
+              <source src="assets/videos/urani-ceara-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural (E.M. André Urani e E.M. Ceará)</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/stella-maris-joaquim-2015.jpg" aria-label="Passeio cultural (Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro)">
+              <source src="assets/videos/stella-maris-joaquim-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural (Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro)</p>
           </li>
           <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=lqYt0cLkJvY" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Encontro de sábado, 10/09/2011">
+            <a href="https://www.youtube.com/watch?v=lqYt0cLkJvY" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Encontro de sábado">
               <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/lqYt0cLkJvY/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2011</span><span class="video-card__title">Encontro de sábado, 10/09/2011</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=tClMNZi9-BA" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Passeio cultural, 15/09 e 26/10/2011 (E.M. Rostham Pedro de Farias e E.M. Uruguai)">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/tClMNZi9-BA/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2011</span><span class="video-card__title">Passeio cultural, 15/09 e 26/10/2011 (E.M. Rostham Pedro de Farias e E.M. Uruguai)</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=PXWgEKKrUgM" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Passeio cultural, 08/11/2011 (E.M. Dunshee de Abranches)">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/PXWgEKKrUgM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2011</span><span class="video-card__title">Passeio cultural, 08/11/2011 (E.M. Dunshee de Abranches)</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=3nN6g65QOVM" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Apresentação do projeto aos professores, sábados de maio de 2015">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/3nN6g65QOVM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2015</span><span class="video-card__title">Apresentação do projeto aos professores, sábados de maio de 2015</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=G4tPM1sQmpA" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Passeio cultural, 21/08 e 15/09/2015 (E.M. Atenas e E.M. Alexandre Farah)">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/G4tPM1sQmpA/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2015</span><span class="video-card__title">Passeio cultural, 21/08 e 15/09/2015 (E.M. Atenas e E.M. Alexandre Farah)</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=EtHZld8Jo_I" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Passeio cultural, 12/08 e 20/08 (E.M. André Urani e E.M. Ceará)">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/EtHZld8Jo_I/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2015</span><span class="video-card__title">Passeio cultural, 12/08 e 20/08 (E.M. André Urani e E.M. Ceará)</span></span>
-            </a>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=mjaS2MG1mjM" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Passeio cultural, 21/10 e 23/10/2015 (Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro)">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/mjaS2MG1mjM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__year">2015</span><span class="video-card__title">Passeio cultural, 21/10 e 23/10/2015 (Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro)</span></span>
+              <span class="video-card__body"><span class="video-card__title">Encontro de sábado</span></span>
             </a>
           </li>
           </ul>
@@ -1333,7 +1333,7 @@
       <nav class="site-footer__nav" aria-label="Rodapé">
         <h2>Navegação</h2>
         <ul>
-          <li><a href="#livro">O livro</a></li>
+          <li><a href="#livro-imagem">O livro</a></li>
           <li><a href="#atividades">Atividades</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#acervo">Acervo</a></li>
@@ -1384,6 +1384,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=15" defer></script>
+  <script src="assets/js/main.js?v=16" defer></script>
 </body>
 </html>
