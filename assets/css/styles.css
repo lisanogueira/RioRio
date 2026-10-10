@@ -402,12 +402,12 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .atv-card__intro p{ color:var(--tinta-70); margin:0; }
 
 .quiz{ margin:0; }
-.quiz__scene{ position:relative; margin:0 0 1.2rem; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); }
+.quiz__scene{ position:relative; margin:0 0 1.2rem; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); container-type:inline-size; --m:clamp(20px,4.4cqw,32px); }
 .quiz__scene img{ width:100%; display:block; }
 .quiz__marker{
-  position:absolute; transform:translate(-50%,-50%); width:2rem; height:2rem; border-radius:50%;
+  position:absolute; transform:translate(-50%,-50%); width:var(--m,2rem); height:var(--m,2rem); border-radius:50%;
   display:grid; place-items:center; background:var(--amarelo); color:var(--tinta);
-  font-family:var(--ff-display); font-weight:700; font-size:1rem;
+  font-family:var(--ff-display); font-weight:700; font-size:clamp(.72rem,calc(var(--m,2rem) * .5),1rem);
   border:2px solid var(--tinta); box-shadow:var(--shadow-sm);
 }
 .quiz__rows{ list-style:none; margin:0 0 1.2rem; padding:0; display:grid; gap:.6rem; }
