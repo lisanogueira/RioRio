@@ -780,3 +780,9 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 }
 .video-card--file video{ display:block; width:100%; aspect-ratio:16/9; background:#000; object-fit:contain; }
 .video-card--file .video-card__title{ margin:0; padding:.8rem 1rem 1rem; }
+
+/* ===== foto ampliada: sempre centralizada, com zoom próprio (sem zoom da página) ===== */
+.lightbox{ touch-action:none; overscroll-behavior:contain; }
+.lightbox__dialog{ max-height:88vh; max-height:calc(100dvh - 1.5rem); margin:auto; }
+.lightbox__img{ max-height:74vh; max-height:calc(100dvh - 9rem); touch-action:none; transform-origin:center center; user-select:none; -webkit-user-drag:none; }
+.lightbox__img.is-zoomed{ cursor:grab; }

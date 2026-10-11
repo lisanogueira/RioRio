@@ -160,7 +160,48 @@
     var links = [];          // conjunto ativo (da galeria clicada)
     var lastFocused = null;
 
+    /* zoom dentro da foto (pinça / toque duplo / arrastar), sempre a partir do centro */
+    var zoom = { s: 1, x: 0, y: 0 };
+    var pointers = {};
+    var pinchStart = 0, pinchScale = 1;
+    var applyZoom = function () {
+      var maxX = (lbImg.clientWidth * (zoom.s - 1)) / 2, maxY = (lbImg.clientHeight * (zoom.s - 1)) / 2;
+      zoom.x = Math.max(-maxX, Math.min(maxX, zoom.x));
+      zoom.y = Math.max(-maxY, Math.min(maxY, zoom.y));
+      lbImg.style.transform = zoom.s === 1 ? "" : "translate(" + zoom.x + "px," + zoom.y + "px) scale(" + zoom.s + ")";
+      lbImg.classList.toggle("is-zoomed", zoom.s > 1);
+    };
+    var resetZoom = function () { zoom.s = 1; zoom.x = 0; zoom.y = 0; pointers = {}; applyZoom(); };
+    var dist = function (a, b) { return Math.hypot(a.x - b.x, a.y - b.y); };
+    lbImg.addEventListener("pointerdown", function (e) {
+      pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var ids = Object.keys(pointers);
+      if (ids.length === 2) { pinchStart = dist(pointers[ids[0]], pointers[ids[1]]); pinchScale = zoom.s; }
+    });
+    lbImg.addEventListener("pointermove", function (e) {
+      var p = pointers[e.pointerId];
+      if (!p) return;
+      var ids = Object.keys(pointers);
+      if (ids.length === 2 && pinchStart) {
+        pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+        zoom.s = Math.max(1, Math.min(4, pinchScale * dist(pointers[ids[0]], pointers[ids[1]]) / pinchStart));
+        if (zoom.s === 1) { zoom.x = 0; zoom.y = 0; }
+        applyZoom();
+      } else if (ids.length === 1 && zoom.s > 1) {
+        zoom.x += e.clientX - p.x; zoom.y += e.clientY - p.y;
+        pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+        applyZoom();
+      }
+    });
+    var endPointer = function (e) { delete pointers[e.pointerId]; pinchStart = 0; };
+    lbImg.addEventListener("pointerup", endPointer);
+    lbImg.addEventListener("pointercancel", endPointer);
+    lbImg.addEventListener("dblclick", function () {
+      if (zoom.s > 1) resetZoom(); else { zoom.s = 2.5; applyZoom(); }
+    });
+
     var show = function (i) {
+      resetZoom();
       current = (i + links.length) % links.length;
       var link = links[current];
       var img = $("img", link);
