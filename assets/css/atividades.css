@@ -236,3 +236,8 @@
   width:var(--dz); height:var(--dz); margin:calc(var(--dz) / -2) 0 0 calc(var(--dz) / -2); border-radius:50%;
 }
 .ativ-stage--fluid .drop-zone > .drag-item--dot{ width:var(--dz); height:var(--dz); }
+
+/* traço fino nas bolinhas (pedido da autora) */
+.drag-item--dot{ border-width:1.5px; }
+.ativ-stage--fluid .drag-item--dot{ border-width:1px; }
+.drop-zone--black, .ativ-stage--fluid .drop-zone{ border-width:1px; }
