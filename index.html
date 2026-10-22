@@ -27,7 +27,7 @@
   <!-- LCP: preload the hero cover -->
   <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=23" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -78,9 +78,9 @@
         </button>
         <ul class="nav__menu" id="nav-menu" data-nav-menu>
           <li><a href="#livro-imagem">O livro</a></li>
-          <li><a href="#atividades">Atividades</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
-          <li><a href="#acervo">Acervo</a></li>
+          <li><a href="#memorias">Acervo</a></li>
+          <li><a href="#atividades">Atividades</a></li>
           <li><a href="#autora">A autora</a></li>
           <li><a href="#contato">Contato</a></li>
           <li class="nav__cta-item"><a class="btn btn--pink btn--sm" href="#escolas">Adote na sua escola</a></li>
@@ -335,119 +335,6 @@
     </section>
 
     <!-- =========================================================== -->
-    <!-- ACTIVITIES — Atividades interativas para estudantes         -->
-    <!-- =========================================================== -->
-    <section class="activities" id="atividades" aria-labelledby="atv-title">
-      <div class="wrap">
-        <header class="section-head" data-reveal>
-          <p class="kicker">Atividades</p>
-          <h2 class="section-title" id="atv-title">Atividades para a sala de aula</h2>
-          <p class="section-sub">
-            Atividades que levam o estudante a observar a cidade fazem parte do projeto Caminhos do Rio.
-            Experimente uma delas aqui mesmo.
-          </p>
-        </header>
-
-        <div class="atv-redirect" data-reveal>
-          <div>
-            <p class="atv-redirect__kicker">Atividades na escola</p>
-            <p class="atv-redirect__text">
-              Atividades completas, de arrastar e clicar, com mapas e imagens históricas da cidade, para uma boa análise,
-              e mais um texto ilustrado! É para usar nos computadores da escola, antes ou depois do passeio.
-            </p>
-          </div>
-          <a class="btn btn--cyan" href="atividade-1.html">Ir para as atividades na escola →</a>
-        </div>
-
-        <!-- Atividade interativa: A fundação da cidade -->
-        <div class="atv-card" data-reveal>
-          <div class="atv-card__intro">
-            <p class="kicker">Resumo da história do Rio · Atividade 1</p>
-            <h3 class="atv-card__title">A fundação da cidade</h3>
-            <p>
-              Vamos analisar o local onde a cidade do Rio de Janeiro foi fundada por Estácio
-              de Sá, em 1565. Na imagem estão os três morros junto à entrada da Baía de
-              Guanabara. Descubra qual é cada um: escolha o número certo para cada morro.
-            </p>
-          </div>
-
-          <form class="quiz" data-quiz>
-            <figure class="quiz__scene">
-              <img src="assets/images/atv-fundacao.jpg" width="1024" height="325" loading="lazy" decoding="async"
-                   alt="Panorama histórico da entrada da Baía de Guanabara com os morros Cara de Cão, da Urca e do Pão de Açúcar." />
-              <span class="quiz__marker" style="left:20.5%; top:calc(69.5% - var(--m) / 2 - 5px); background:#4CC26B; border-color:#1f6b3a">1</span>
-              <span class="quiz__marker" style="left:68.7%; top:calc(53.5% - var(--m) / 2 - 5px); background:#5B8DEF; border-color:#1f3f8b">2</span>
-              <span class="quiz__marker" style="left:60.9%; top:calc(35% - var(--m) / 2 - 5px); background:#F06AA0; border-color:#8b1f52">3</span>
-            </figure>
-
-            <ul class="quiz__rows" role="list">
-              <li class="quiz__row" data-quiz-row>
-                <label for="q-caradecao">Morro Cara de Cão</label>
-                <span class="quiz__pick">
-                  <select id="q-caradecao" data-answer="1">
-                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
-                  </select>
-                  <span class="quiz__feedback" aria-live="polite"></span>
-                </span>
-              </li>
-              <li class="quiz__row" data-quiz-row>
-                <label for="q-urca">Morro da Urca</label>
-                <span class="quiz__pick">
-                  <select id="q-urca" data-answer="2">
-                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
-                  </select>
-                  <span class="quiz__feedback" aria-live="polite"></span>
-                </span>
-              </li>
-              <li class="quiz__row" data-quiz-row>
-                <label for="q-paodeacucar">Morro do Pão de Açúcar</label>
-                <span class="quiz__pick">
-                  <select id="q-paodeacucar" data-answer="3">
-                    <option value="">–</option><option>1</option><option>2</option><option>3</option>
-                  </select>
-                  <span class="quiz__feedback" aria-live="polite"></span>
-                </span>
-              </li>
-            </ul>
-
-            <div class="quiz__actions">
-              <button class="btn btn--cyan" type="button" data-quiz-check>Verificar</button>
-              <button class="btn btn--ghost" type="button" data-quiz-reset>Refazer</button>
-              <p class="quiz__status" data-quiz-status role="status" aria-live="polite"></p>
-            </div>
-          </form>
-        </div>
-
-        <!-- Série "Resumo da história do Rio" -->
-        <div class="atv-series" data-reveal>
-          <h3 class="atv-series__title">Série “Resumo da história do Rio”</h3>
-          <ol class="atv-series__list" role="list">
-            <li><a class="atv-series__link" href="atividade-1.html"><span class="atv-series__n">1</span> A fundação da cidade</a></li>
-            <li><a class="atv-series__link" href="atividade-2.html"><span class="atv-series__n">2</span> O nosso município</a></li>
-            <li><a class="atv-series__link" href="atividade-3.html"><span class="atv-series__n">3</span> Onde o Rio começou</a></li>
-            <li><a class="atv-series__link" href="atividade-4.html"><span class="atv-series__n">4</span> As principais vias da cidade</a></li>
-            <li><a class="atv-series__link" href="atividade-5.html"><span class="atv-series__n">5</span> A origem da cidade e a principal praça</a></li>
-          </ol>
-          <h4 class="atv-series__sub">Imagens históricas do Rio</h4>
-          <ol class="atv-series__list" role="list">
-            <li><a class="atv-series__link" href="imagem-historica-1.html"><span class="atv-series__n">1</span> Cidade de S. Sebastião do Rio de Janeiro</a></li>
-            <li><a class="atv-series__link" href="imagem-historica-2.html"><span class="atv-series__n">2</span> Praça do Palácio no Rio de Janeiro</a></li>
-            <li><a class="atv-series__link" href="imagem-historica-3.html"><span class="atv-series__n">3</span> Largo do Paço</a></li>
-            <li><a class="atv-series__link" href="imagem-historica-4.html"><span class="atv-series__n">4</span> Vista da Igreja do Mosteiro de S. Bento</a></li>
-          </ol>
-          <p class="atv-series__note">
-            Clique em cada título para conhecer a história do Rio e participar de cada atividade.
-          </p>
-        </div>
-
-        <div class="atv-cta" data-reveal>
-          <p>As atividades acompanham o livro e os passeios. Quer usá-las com a sua turma?</p>
-          <a class="btn btn--yellow" href="#escolas">Leve as atividades para a sua escola</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================== -->
     <!-- CRIU INTRODUCTION                                            -->
     <!-- =========================================================== -->
     <section class="criu-intro" id="criu" aria-labelledby="criu-title">
@@ -457,9 +344,6 @@
             <img src="assets/images/criu-alta-resolucao.png" width="1547" height="1017" loading="lazy" decoding="async"
                  alt="Criu Carioca, o pássaro-professor idealista e apaixonado pela cidade." />
           </div>
-          <svg class="criu-intro__scribble" aria-hidden="true" viewBox="0 0 120 120">
-            <path class="draw" d="M10 60 C 30 20, 90 20, 110 55" fill="none" stroke="#C11F5B" stroke-width="3" stroke-linecap="round"/>
-          </svg>
         </div>
 
         <div class="criu-intro__body" data-reveal>
@@ -476,6 +360,39 @@
             <li class="quotes__item">“É preciso conhecer para amar, e amar para preservar.”</li>
             <li class="quotes__item">“Vamos conhecer a nossa cidade para melhor preservá-la!”</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- SCHOOLS CTA                                                  -->
+    <!-- =========================================================== -->
+    <section class="schools" id="escolas" aria-labelledby="escolas-title">
+      <div class="wrap schools__inner">
+        <div class="schools__head" data-reveal>
+          <p class="kicker kicker--light">Para escolas e educadores</p>
+          <h2 class="section-title section-title--light" id="escolas-title">Leve o RioRio para a sua escola</h2>
+          <p class="section-sub section-sub--light">
+            Um apoio concreto para História e Geografia no Ensino Fundamental — do livro em sala
+            de aula às aulas de campo pela cidade.
+          </p>
+        </div>
+        <ul class="schools__photos" role="list" data-reveal>
+          <li><img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja, com o caderno de atividades."></li>
+          <li><img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado."></li>
+          <li><img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico."></li>
+        </ul>
+
+        <ul class="schools__grid" role="list" data-reveal>
+          <li class="scard"><h3>Adoção do livro</h3><p>RioRio como atividade complementar de História e Geografia, do 3º ao 5º ano.</p></li>
+          <li class="scard"><h3>Passeios culturais</h3><p>Dez roteiros de aulas de campo pelo patrimônio histórico e artístico do Rio.</p></li>
+          <li class="scard"><h3>Cadernos de atividades</h3><p>Material próprio para cada roteiro, idealizado para incentivar o olhar do estudante a descobrir as belezas históricas da cidade.</p></li>
+          <li class="scard"><h3>Orientação no passeio</h3><p>Acompanhamento da turma durante toda a caminhada, descobrindo juntos as belezas do Rio.</p></li>
+          <li class="scard"><h3>Formação de professores</h3><p>Formação e orientação ao educador para aproveitar a obra e os roteiros em sala.</p></li>
+          <li class="scard"><h3>Novos roteiros</h3><p>Construção de percursos sob medida, definidos de acordo com o interesse da escola.</p></li>
+        </ul>
+        <div class="schools__cta" data-reveal>
+          <a class="btn btn--yellow btn--lg" href="#contato">Leve o RioRio para a sua escola</a>
         </div>
       </div>
     </section>
@@ -522,7 +439,7 @@
               <span class="route__img"><img src="assets/images/rot-cristo.webp" width="360" height="240" loading="lazy" decoding="async" alt="Cristo Redentor no alto do Corcovado.">
                 <span class="route__flag" id="rot4-status">Indisponível no momento</span>
               </span>
-              <span class="route__body"><span class="route__n">04</span><span class="route__name">Cristo Redentor do Corcovado</span><span class="route__desc">Imagem do Cristo Redentor, Estrada de Ferro do Corcovado, Floresta da Tijuca e paisagem do alto.</span></span>
+              <span class="route__body"><span class="route__n">04</span><span class="route__name">Cristo Redentor do Corcovado</span><span class="route__desc">Imagem do Cristo Redentor, Estrada de Ferro do Corcovado, Floresta da Tijuca e paisagem da cidade.</span></span>
             </a>
           </li>
           <li class="route" style="--rc:var(--rosa)">
@@ -540,7 +457,7 @@
           <li class="route" style="--rc:var(--azul)">
             <a class="route__link" href="#contato">
               <span class="route__img"><img src="assets/images/rot-ilhafiscal.webp" width="360" height="240" loading="lazy" decoding="async" alt="Castelo neogótico da Ilha Fiscal na Baía de Guanabara."></span>
-              <span class="route__body"><span class="route__n">07</span><span class="route__name">Ilha Fiscal</span><span class="route__desc">O castelo neogótico em pedra, inaugurado por Dom Pedro II, palco do último baile do Império.</span></span>
+              <span class="route__body"><span class="route__n">07</span><span class="route__name">Ilha Fiscal</span><span class="route__desc">Castelo neogótico, inaugurado por Dom Pedro II, vitrais e arquitetura esculpida na pedra, palco do último baile do Império.</span></span>
             </a>
           </li>
           <li class="route" style="--rc:var(--verde)">
@@ -564,8 +481,8 @@
         </ul>
 
         <div class="caminhos__media" data-reveal>
-          <h3 class="caminhos__subtitle">Os cadernos de atividades</h3>
-          <p class="caminhos__subtext">Cada roteiro tem um caderno ilustrado para a criança desenhar, observar e responder durante o passeio e, depois, em sala de aula. Veja alguns exemplos. Clique para ampliar.</p>
+          <h3 class="caminhos__subtitle">Cadernos de atividades</h3>
+          <p class="caminhos__subtext">Cada roteiro tem um caderno de atividades ilustrado para a criança desenhar, observar e responder durante o passeio e, depois, em sala de aula. Veja alguns exemplos. Clique para ampliar.</p>
           <ul class="photo-grid photo-grid--cadernos" role="list" data-gallery>
           <li class="photo-grid__item">
             <a class="gallery__link" href="assets/images/cadernos/cap-roteiro1.webp"
@@ -636,9 +553,222 @@
                História, Arte e Geografia do Ensino Fundamental.</p>
             <div class="btn-row">
               <a class="btn btn--yellow" href="#contato">Agende o passeio da sua turma</a>
-              <a class="btn btn--ghost btn--on-dark" href="#escolas">Conheça os roteiros</a>
+              <a class="btn btn--ghost btn--on-dark" href="#caminhos">Conheça os roteiros</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <!-- MEMÓRIAS EM VÍDEOS E FOTOGRAFIAS                             -->
+    <!-- =========================================================== -->
+    <section class="memorias" id="memorias" aria-labelledby="memorias-title">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Acervo</p>
+          <h2 class="section-title" id="memorias-title">Memórias dos passeios registradas em vídeos e fotografias</h2>
+          <p class="section-sub">Veja algumas lindas experiências.</p>
+        </header>
+
+        <div class="memorias__media" data-reveal>
+          <h3 class="mem__subtitle">Vídeos das escolas</h3>
+          <p class="mem__subtext">Toque no vídeo para assistir.</p>
+          <ul class="video-grid" role="list">
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/apresentacao-professores-2011.jpg" aria-label="Apresentação do projeto aos professores">
+              <source src="assets/videos/apresentacao-professores-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Apresentação do projeto aos professores</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/rostham-uruguai-2011.jpg" aria-label="Passeio cultural - E.M. Rostham Pedro de Farias e E.M. Uruguai">
+              <source src="assets/videos/rostham-uruguai-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural - E.M. Rostham Pedro de Farias e E.M. Uruguai</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/dunshee-abranches-2011.jpg" aria-label="Passeio cultural - E.M. Dunshee de Abranches">
+              <source src="assets/videos/dunshee-abranches-2011.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural - E.M. Dunshee de Abranches</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/professores-2015.jpg" aria-label="Passeios com professores">
+              <source src="assets/videos/professores-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeios com professores</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/atenas-alexandre-farah-2015.jpg" aria-label="Passeio cultural - E.M. Atenas e E.M. Alexandre Farah">
+              <source src="assets/videos/atenas-alexandre-farah-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural - E.M. Atenas e E.M. Alexandre Farah</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/urani-ceara-2015.jpg" aria-label="Passeio cultural - E.M. André Urani e E.M. Ceará">
+              <source src="assets/videos/urani-ceara-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural - E.M. André Urani e E.M. Ceará</p>
+          </li>
+          <li class="video-card video-card--file">
+            <video controls preload="none" playsinline poster="assets/videos/stella-maris-joaquim-2015.jpg" aria-label="Passeio cultural - Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro">
+              <source src="assets/videos/stella-maris-joaquim-2015.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo.
+            </video>
+            <p class="video-card__title">Passeio cultural - Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro</p>
+          </li>
+          <li class="video-card">
+            <a href="https://www.youtube.com/watch?v=lqYt0cLkJvY" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Encontro de sábado">
+              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/lqYt0cLkJvY/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
+              <span class="video-card__body"><span class="video-card__title">Encontro de sábado</span></span>
+            </a>
+          </li>
+          </ul>
+
+          <h3 class="mem__subtitle">Fotografias dos passeios</h3>
+          <p class="mem__subtext">Registros de turmas de escolas da rede pública nos passeios-aula do Caminhos do Rio.</p>
+          <div class="chips" role="group" aria-label="Filtrar as fotos dos passeios" data-filter-group="passeios-grid">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Todas</button>
+            <button class="chip" type="button" data-filter="centro" aria-pressed="false">Centro histórico e igrejas</button>
+            <button class="chip" type="button" data-filter="fortaleza" aria-pressed="false">Fortaleza de São João</button>
+            <button class="chip" type="button" data-filter="cristo" aria-pressed="false">Cristo Redentor</button>
+            <button class="chip" type="button" data-filter="natureza" aria-pressed="false">Jardim Botânico, Zoo e Criu</button>
+          </div>
+          <ul class="photo-grid" role="list" data-gallery id="passeios-grid">
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/chafariz.webp"
+               data-caption="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
+              <img src="assets/images/passeios/chafariz-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="cristo">
+            <a class="gallery__link" href="assets/images/passeios/cristo.webp"
+               data-caption="Alunos preenchem o caderno de atividades no alto do Corcovado.">
+              <img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="fortaleza">
+            <a class="gallery__link" href="assets/images/passeios/fortaleza-canhao.webp"
+               data-caption="Observando um canhão antigo na Fortaleza de São João.">
+              <img src="assets/images/passeios/fortaleza-canhao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Observando um canhão antigo na Fortaleza de São João.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="fortaleza">
+            <a class="gallery__link" href="assets/images/passeios/fortaleza-portao.webp"
+               data-caption="Turma na entrada da Fortaleza de São João.">
+              <img src="assets/images/passeios/fortaleza-portao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na entrada da Fortaleza de São João.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/lapa-rua.webp"
+               data-caption="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
+              <img src="assets/images/passeios/lapa-rua-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/lapa-igreja.webp"
+               data-caption="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
+              <img src="assets/images/passeios/lapa-igreja-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/travessa-comercio.webp"
+               data-caption="Turma na Travessa do Comércio, Centro do Rio.">
+              <img src="assets/images/passeios/travessa-comercio-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na Travessa do Comércio, Centro do Rio.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/gloria-azulejos.webp"
+               data-caption="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
+              <img src="assets/images/passeios/gloria-azulejos-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/igreja-interior.webp"
+               data-caption="Atividade dentro de uma igreja colonial do Centro.">
+              <img src="assets/images/passeios/igreja-interior-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Atividade dentro de uma igreja colonial do Centro.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/caminhos-banner.webp"
+               data-caption="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
+              <img src="assets/images/passeios/caminhos-banner-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="cristo">
+            <a class="gallery__link" href="assets/images/passeios/escada-rolante.webp"
+               data-caption="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
+              <img src="assets/images/passeios/escada-rolante-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/ciep-gilberto.webp"
+               data-caption="Alunos do CIEP Gilberto Freire comemoram o passeio.">
+              <img src="assets/images/passeios/ciep-gilberto-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Gilberto Freire comemoram o passeio.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/gastao-4728.webp"
+               data-caption="Alunos da E. M. Gastão Penalva em igreja histórica.">
+              <img src="assets/images/passeios/gastao-4728-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva em igreja histórica.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/gastao-4918.webp"
+               data-caption="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
+              <img src="assets/images/passeios/gastao-4918-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7118.webp"
+               data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
+              <img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="centro">
+            <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7143.webp"
+               data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
+              <img src="assets/images/passeios/ciep-francisco-7143-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/zoo-1.webp"
+               data-caption="Aula de campo no Jardim Zoológico.">
+              <img src="assets/images/passeios/zoo-1-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Aula de campo no Jardim Zoológico.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/zoo-2.webp"
+               data-caption="Registrando o que vê: aula de campo no Jardim Zoológico.">
+              <img src="assets/images/passeios/zoo-2-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Registrando o que vê: aula de campo no Jardim Zoológico.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/jb-grupo.webp"
+               data-caption="Turma reunida junto às árvores gigantes do Jardim Botânico.">
+              <img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico.">
+            </a>
+          </li>
+          <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/jb-folhas.webp"
+               data-caption="Crianças observam as plantas no Jardim Botânico.">
+              <img src="assets/images/passeios/jb-folhas-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Crianças observam as plantas no Jardim Botânico.">
+            </a>
+          </li>
+                    <li class="photo-grid__item" data-cat="natureza">
+            <a class="gallery__link" href="assets/images/passeios/criu-mascote.webp"
+               data-caption="As crianças fazem carinho no Criu Carioca, mascote do projeto.">
+              <img src="assets/images/passeios/criu-mascote-t.webp" width="400" height="300" loading="lazy" decoding="async" alt="Duas crianças fazem carinho no Criu Carioca, mascote do projeto.">
+            </a>
+          </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -940,214 +1070,54 @@
     </section>
 
     <!-- =========================================================== -->
-    <!-- MEMÓRIAS EM VÍDEOS E FOTOGRAFIAS                             -->
+    <!-- ACTIVITIES — Atividades interativas para estudantes         -->
     <!-- =========================================================== -->
-    <section class="memorias" id="memorias" aria-labelledby="memorias-title">
+    <section class="activities" id="atividades" aria-labelledby="atv-title">
       <div class="wrap">
         <header class="section-head" data-reveal>
-          <p class="kicker">Caminhos do Rio</p>
-          <h2 class="section-title" id="memorias-title">Memórias registradas em vídeos e fotografias</h2>
-          <p class="section-sub">Veja algumas lindas experiências.</p>
+          <p class="kicker">Atividades</p>
+          <h2 class="section-title" id="atv-title">Atividades para a sala de aula</h2>
+          <p class="section-sub">
+            Atividades que levam o estudante a observar a cidade fazem parte do projeto Caminhos do Rio.
+            Experimente uma delas aqui mesmo.
+          </p>
         </header>
 
-        <div class="memorias__media" data-reveal>
-          <h3 class="mem__subtitle">Vídeos das escolas</h3>
-          <p class="mem__subtext">Toque no vídeo para assistir.</p>
-          <ul class="video-grid" role="list">
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/apresentacao-professores-2011.jpg" aria-label="Apresentação do projeto aos professores">
-              <source src="assets/videos/apresentacao-professores-2011.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Apresentação do projeto aos professores</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/rostham-uruguai-2011.jpg" aria-label="Passeio cultural - E.M. Rostham Pedro de Farias e E.M. Uruguai">
-              <source src="assets/videos/rostham-uruguai-2011.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeio cultural - E.M. Rostham Pedro de Farias e E.M. Uruguai</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/dunshee-abranches-2011.jpg" aria-label="Passeio cultural - E.M. Dunshee de Abranches">
-              <source src="assets/videos/dunshee-abranches-2011.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeio cultural - E.M. Dunshee de Abranches</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/professores-2015.jpg" aria-label="Passeios com professores">
-              <source src="assets/videos/professores-2015.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeios com professores</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/atenas-alexandre-farah-2015.jpg" aria-label="Passeio cultural - E.M. Atenas e E.M. Alexandre Farah">
-              <source src="assets/videos/atenas-alexandre-farah-2015.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeio cultural - E.M. Atenas e E.M. Alexandre Farah</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/urani-ceara-2015.jpg" aria-label="Passeio cultural - E.M. André Urani e E.M. Ceará">
-              <source src="assets/videos/urani-ceara-2015.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeio cultural - E.M. André Urani e E.M. Ceará</p>
-          </li>
-          <li class="video-card video-card--file">
-            <video controls preload="none" playsinline poster="assets/videos/stella-maris-joaquim-2015.jpg" aria-label="Passeio cultural - Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro">
-              <source src="assets/videos/stella-maris-joaquim-2015.mp4" type="video/mp4">
-              Seu navegador não reproduz este vídeo.
-            </video>
-            <p class="video-card__title">Passeio cultural - Colégio Stella Maris e E.M. Prof. Joaquim C. Ribeiro</p>
-          </li>
-          <li class="video-card">
-            <a href="https://www.youtube.com/watch?v=lqYt0cLkJvY" target="_blank" rel="noopener" aria-label="Assistir no YouTube: Encontro de sábado">
-              <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/lqYt0cLkJvY/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="" onerror="this.remove()"><span class="video-card__play" aria-hidden="true"></span></span>
-              <span class="video-card__body"><span class="video-card__title">Encontro de sábado</span></span>
-            </a>
-          </li>
-          </ul>
-
-          <h3 class="mem__subtitle">Fotografias dos passeios</h3>
-          <p class="mem__subtext">Registros de turmas de escolas da rede pública nos passeios-aula do Caminhos do Rio.</p>
-          <div class="chips" role="group" aria-label="Filtrar as fotos dos passeios" data-filter-group="passeios-grid">
-            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Todas</button>
-            <button class="chip" type="button" data-filter="centro" aria-pressed="false">Centro histórico e igrejas</button>
-            <button class="chip" type="button" data-filter="fortaleza" aria-pressed="false">Fortaleza de São João</button>
-            <button class="chip" type="button" data-filter="cristo" aria-pressed="false">Cristo Redentor</button>
-            <button class="chip" type="button" data-filter="natureza" aria-pressed="false">Jardim Botânico, Zoo e Criu</button>
+        <div class="atv-redirect" data-reveal>
+          <div>
+            <p class="atv-redirect__kicker">Atividades na escola</p>
+            <p class="atv-redirect__text">
+              Atividades completas, de arrastar e clicar, com mapas e imagens históricas da cidade, para uma boa análise,
+              e mais um texto ilustrado! É para usar nos computadores da escola, antes ou depois do passeio.
+            </p>
           </div>
-          <ul class="photo-grid" role="list" data-gallery id="passeios-grid">
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/chafariz.webp"
-               data-caption="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
-              <img src="assets/images/passeios/chafariz-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos diante do Chafariz do Mestre Valentim, na Praça XV.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="cristo">
-            <a class="gallery__link" href="assets/images/passeios/cristo.webp"
-               data-caption="Alunos preenchem o caderno de atividades no alto do Corcovado.">
-              <img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="fortaleza">
-            <a class="gallery__link" href="assets/images/passeios/fortaleza-canhao.webp"
-               data-caption="Observando um canhão antigo na Fortaleza de São João.">
-              <img src="assets/images/passeios/fortaleza-canhao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Observando um canhão antigo na Fortaleza de São João.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="fortaleza">
-            <a class="gallery__link" href="assets/images/passeios/fortaleza-portao.webp"
-               data-caption="Turma na entrada da Fortaleza de São João.">
-              <img src="assets/images/passeios/fortaleza-portao-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na entrada da Fortaleza de São João.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/lapa-rua.webp"
-               data-caption="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
-              <img src="assets/images/passeios/lapa-rua-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Passeio pelas ruas do Centro histórico, caderno de atividades na mão.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/lapa-igreja.webp"
-               data-caption="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
-              <img src="assets/images/passeios/lapa-igreja-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Estudantes dentro da Igreja de Nossa Senhora da Lapa dos Mercadores.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/travessa-comercio.webp"
-               data-caption="Turma na Travessa do Comércio, Centro do Rio.">
-              <img src="assets/images/passeios/travessa-comercio-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma na Travessa do Comércio, Centro do Rio.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/gloria-azulejos.webp"
-               data-caption="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
-              <img src="assets/images/passeios/gloria-azulejos-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos descobrem os azulejos da Igreja da Glória do Outeiro.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/igreja-interior.webp"
-               data-caption="Atividade dentro de uma igreja colonial do Centro.">
-              <img src="assets/images/passeios/igreja-interior-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Atividade dentro de uma igreja colonial do Centro.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/caminhos-banner.webp"
-               data-caption="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
-              <img src="assets/images/passeios/caminhos-banner-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="A turma chega à igreja para o passeio-aula Caminhos do Rio.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="cristo">
-            <a class="gallery__link" href="assets/images/passeios/escada-rolante.webp"
-               data-caption="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
-              <img src="assets/images/passeios/escada-rolante-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Levy Neves no passeio Caminhos do Rio.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/ciep-gilberto.webp"
-               data-caption="Alunos do CIEP Gilberto Freire comemoram o passeio.">
-              <img src="assets/images/passeios/ciep-gilberto-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Gilberto Freire comemoram o passeio.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/gastao-4728.webp"
-               data-caption="Alunos da E. M. Gastão Penalva em igreja histórica.">
-              <img src="assets/images/passeios/gastao-4728-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva em igreja histórica.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/gastao-4918.webp"
-               data-caption="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
-              <img src="assets/images/passeios/gastao-4918-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos da E. M. Gastão Penalva com o caderno de atividades.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7118.webp"
-               data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
-              <img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="centro">
-            <a class="gallery__link" href="assets/images/passeios/ciep-francisco-7143.webp"
-               data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
-              <img src="assets/images/passeios/ciep-francisco-7143-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda no interior da igreja.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="natureza">
-            <a class="gallery__link" href="assets/images/passeios/zoo-1.webp"
-               data-caption="Aula de campo no Jardim Zoológico.">
-              <img src="assets/images/passeios/zoo-1-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Aula de campo no Jardim Zoológico.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="natureza">
-            <a class="gallery__link" href="assets/images/passeios/zoo-2.webp"
-               data-caption="Registrando o que vê: aula de campo no Jardim Zoológico.">
-              <img src="assets/images/passeios/zoo-2-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Registrando o que vê: aula de campo no Jardim Zoológico.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="natureza">
-            <a class="gallery__link" href="assets/images/passeios/jb-grupo.webp"
-               data-caption="Turma reunida junto às árvores gigantes do Jardim Botânico.">
-              <img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico.">
-            </a>
-          </li>
-          <li class="photo-grid__item" data-cat="natureza">
-            <a class="gallery__link" href="assets/images/passeios/jb-folhas.webp"
-               data-caption="Crianças observam as plantas no Jardim Botânico.">
-              <img src="assets/images/passeios/jb-folhas-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Crianças observam as plantas no Jardim Botânico.">
-            </a>
-          </li>
-                    <li class="photo-grid__item" data-cat="natureza">
-            <a class="gallery__link" href="assets/images/passeios/criu-mascote.webp"
-               data-caption="As crianças fazem carinho no Criu Carioca, mascote do projeto.">
-              <img src="assets/images/passeios/criu-mascote-t.webp" width="400" height="300" loading="lazy" decoding="async" alt="Duas crianças fazem carinho no Criu Carioca, mascote do projeto.">
-            </a>
-          </li>
-          </ul>
+        </div>
+
+        <!-- Série "Resumo da história do Rio" -->
+        <div class="atv-series" data-reveal>
+          <h3 class="atv-series__title">Série “Resumo da história do Rio”</h3>
+          <ol class="atv-series__list" role="list">
+            <li><a class="atv-series__link" href="atividade-1.html"><span class="atv-series__n">1</span> A fundação da cidade</a></li>
+            <li><a class="atv-series__link" href="atividade-2.html"><span class="atv-series__n">2</span> O nosso município</a></li>
+            <li><a class="atv-series__link" href="atividade-3.html"><span class="atv-series__n">3</span> Onde o Rio começou</a></li>
+            <li><a class="atv-series__link" href="atividade-4.html"><span class="atv-series__n">4</span> As principais vias da cidade</a></li>
+            <li><a class="atv-series__link" href="atividade-5.html"><span class="atv-series__n">5</span> A origem da cidade e a principal praça</a></li>
+          </ol>
+          <h3 class="atv-series__title atv-series__title--2">Série “Imagens históricas do Rio”</h3>
+          <ol class="atv-series__list" role="list">
+            <li><a class="atv-series__link" href="imagem-historica-1.html"><span class="atv-series__n">1</span> Cidade de S. Sebastião do Rio de Janeiro</a></li>
+            <li><a class="atv-series__link" href="imagem-historica-2.html"><span class="atv-series__n">2</span> Praça do Palácio no Rio de Janeiro</a></li>
+            <li><a class="atv-series__link" href="imagem-historica-3.html"><span class="atv-series__n">3</span> Largo do Paço</a></li>
+            <li><a class="atv-series__link" href="imagem-historica-4.html"><span class="atv-series__n">4</span> Vista da Igreja do Mosteiro de S. Bento</a></li>
+          </ol>
+          <p class="atv-series__note">
+            Clique em cada título para conhecer a história do Rio e participar de cada atividade.
+          </p>
+        </div>
+
+        <div class="atv-cta" data-reveal>
+          <p>As atividades acompanham o livro e os passeios. Quer usá-las com a sua turma?</p>
+          <a class="btn btn--yellow" href="#escolas">Leve as atividades para a sua escola</a>
         </div>
       </div>
     </section>
@@ -1199,39 +1169,6 @@
             Projetos</strong>, dedicada a pesquisas e projetos culturais e educativos para o Ensino Fundamental.
           </p>
           <p class="author__sign handnote">Renata de&nbsp;Faria&nbsp;Pereira</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================== -->
-    <!-- SCHOOLS CTA                                                  -->
-    <!-- =========================================================== -->
-    <section class="schools" id="escolas" aria-labelledby="escolas-title">
-      <div class="wrap schools__inner">
-        <div class="schools__head" data-reveal>
-          <p class="kicker kicker--light">Para escolas e educadores</p>
-          <h2 class="section-title section-title--light" id="escolas-title">Leve o RioRio para a sua escola</h2>
-          <p class="section-sub section-sub--light">
-            Um apoio concreto para História e Geografia no Ensino Fundamental — do livro em sala
-            de aula às aulas de campo pela cidade.
-          </p>
-        </div>
-        <ul class="schools__photos" role="list" data-reveal>
-          <li><img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja, com o caderno de atividades."></li>
-          <li><img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado."></li>
-          <li><img src="assets/images/passeios/jb-grupo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Turma reunida junto às árvores gigantes do Jardim Botânico."></li>
-        </ul>
-
-        <ul class="schools__grid" role="list" data-reveal>
-          <li class="scard"><h3>Adoção do livro</h3><p>RioRio como atividade complementar de História e Geografia, do 3º ao 5º ano.</p></li>
-          <li class="scard"><h3>Passeios culturais</h3><p>Dez roteiros de aulas de campo pelo patrimônio histórico e artístico do Rio.</p></li>
-          <li class="scard"><h3>Cadernos de atividades</h3><p>Material próprio para cada roteiro, idealizado para incentivar o olhar do estudante a descobrir as belezas históricas da cidade.</p></li>
-          <li class="scard"><h3>Orientação no passeio</h3><p>Acompanhamento da turma durante toda a caminhada, descobrindo juntos as belezas do Rio.</p></li>
-          <li class="scard"><h3>Formação de professores</h3><p>Formação e orientação ao educador para aproveitar a obra e os roteiros em sala.</p></li>
-          <li class="scard"><h3>Novos roteiros</h3><p>Construção de percursos sob medida, definidos de acordo com o interesse da escola.</p></li>
-        </ul>
-        <div class="schools__cta" data-reveal>
-          <a class="btn btn--yellow btn--lg" href="#contato">Leve o RioRio para a sua escola</a>
         </div>
       </div>
     </section>
@@ -1334,9 +1271,9 @@
         <h2>Navegação</h2>
         <ul>
           <li><a href="#livro-imagem">O livro</a></li>
-          <li><a href="#atividades">Atividades</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
-          <li><a href="#acervo">Acervo</a></li>
+          <li><a href="#memorias">Acervo</a></li>
+          <li><a href="#atividades">Atividades</a></li>
           <li><a href="#autora">A autora</a></li>
           <li><a href="#historia-para-todos">História do Rio para Todos</a></li>
           <li><a href="#escolas">Para escolas</a></li>
@@ -1384,6 +1321,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=22" defer></script>
+  <script src="assets/js/main.js?v=23" defer></script>
 </body>
 </html>

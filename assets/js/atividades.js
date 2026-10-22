@@ -50,12 +50,8 @@
     var homes = new Map();
     var requiredAnswers = drops.length;
 
-    var help = document.createElement('p');
-    help.className = 'ativ-help';
-    help.textContent = 'Arraste uma peça até o local correto ou selecione a peça e depois selecione o destino.';
     var firstInteractive = root.querySelector('.ativ-instruction, .ativ-stage-scroll, .ativ-bank, .ativ-answers');
     if (firstInteractive) {
-      root.insertBefore(help, firstInteractive);
       root.insertBefore(rotateNote(), firstInteractive);
     }
 

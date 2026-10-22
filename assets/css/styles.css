@@ -343,7 +343,16 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
   background-image:radial-gradient(circle at 50% 40%, rgba(22,160,178,.10), transparent 60%);
 }
 .criu-intro__frame img{ width:80%; filter:drop-shadow(0 10px 14px rgba(20,35,59,.18)); }
-.criu-intro__scribble{ position:absolute; width:5rem; height:5rem; right:8%; top:2%; }
+.criu-intro__inner{ --gap:clamp(2rem,5vw,4rem); gap:var(--gap); }
+/* linha que liga o passarinho ao título, sem encostar na palavra */
+.criu-intro__body .section-title{ position:relative; }
+.criu-intro__body .section-title::before{
+  content:""; position:absolute; right:100%; margin-right:.8rem; top:.5em; height:8px; width:calc(var(--gap) + 1.4rem);
+  background:
+    radial-gradient(circle at 4px 50%, var(--rosa) 0 3.5px, transparent 4px),
+    linear-gradient(var(--rosa), var(--rosa)) 4px 50% / calc(100% - 4px) 2px no-repeat;
+}
+@media (max-width:900px){ .criu-intro__body .section-title::before{ display:none; } }
 .quotes{ list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:.9rem; }
 .quotes__item{
   font-family:var(--ff-display); font-style:italic; font-size:1.2rem; color:var(--tinta);
@@ -552,13 +561,13 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .schools__cta{ text-align:center; margin-top:clamp(2rem,4vw,3rem); }
 
 /* ---------- 14. ENCERRAMENTO ---------- */
-.closing{ background:var(--tinta); color:#fff; text-align:center; overflow:hidden; }
+.closing{ background:#dcedfa; color:var(--tinta); text-align:center; overflow:hidden; }
 .closing__inner{ display:grid; justify-items:center; gap:1.5rem; }
 .closing__criu{ margin:0; width:clamp(7rem,16vw,10rem); }
-.closing__criu img{ filter:drop-shadow(0 12px 18px rgba(0,0,0,.35)); }
+.closing__criu img{ filter:drop-shadow(0 10px 14px rgba(20,35,59,.22)); }
 .closing__quote{
   font-family:var(--ff-display); font-style:italic; font-weight:600;
-  font-size:clamp(1.8rem,1.2rem + 3.4vw,3.4rem); color:#fff; margin:0; line-height:1.12; max-width:20ch;
+  font-size:clamp(1.8rem,1.2rem + 3.4vw,3.4rem); color:var(--tinta); margin:0; line-height:1.12; max-width:20ch;
 }
 .closing__actions{ display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; }
 
@@ -794,3 +803,13 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .lightbox__dialog{ max-height:88vh; max-height:calc(100dvh - 1.5rem); margin:auto; }
 .lightbox__img{ max-height:74vh; max-height:calc(100dvh - 9rem); touch-action:none; transform-origin:center center; user-select:none; -webkit-user-drag:none; }
 .lightbox__img.is-zoomed{ cursor:grab; }
+
+/* ===== revisão 21/10 ===== */
+.atv-redirect{ display:block; text-align:center; }
+.atv-redirect__text{ max-width:none; }
+.atv-series__title--2{ margin-top:1.6rem; }
+.caminhos__media > .caminhos__subtitle, .caminhos__media > .caminhos__subtext{ text-align:center; margin-left:auto; margin-right:auto; }
+/* foto ampliada maior (gravuras e demais imagens) */
+.lightbox{ padding:clamp(.5rem,1.5vw,1.25rem); }
+.lightbox__dialog{ max-width:min(98vw,1800px); }
+.lightbox__img{ max-height:calc(100vh - 8rem); max-height:calc(100dvh - 8rem); }
