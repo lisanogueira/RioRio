@@ -277,14 +277,38 @@
     });
   });
 
-  /* ---------- 8c. Zoom ao passar o mouse nos quadrinhos da linha do tempo ---------- */
-  $$(".tl__zoom").forEach(function (a) {
-    a.addEventListener("mousemove", function (e) {
-      var r = a.getBoundingClientRect();
-      a.style.setProperty("--zx", ((e.clientX - r.left) / r.width * 100) + "%");
-      a.style.setProperty("--zy", ((e.clientY - r.top) / r.height * 100) + "%");
+  /* ---------- 8c. Lupa nos quadrinhos da linha do tempo (mouse) ---------- */
+  if (window.matchMedia && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    var ZOOM = 3, LENS = 170;
+    $$(".tl__zoom").forEach(function (a) {
+      var img = $("img", a), lens = null, preloaded = false;
+      var ensure = function () {
+        if (lens) return;
+        lens = document.createElement("span");
+        lens.className = "tl__lens";
+        lens.setAttribute("aria-hidden", "true");
+        lens.style.backgroundImage = "url('" + a.getAttribute("href") + "')";
+        a.appendChild(lens);
+      };
+      a.addEventListener("mouseenter", function () {
+        if (!preloaded) { preloaded = true; var pre = new Image(); pre.src = a.getAttribute("href"); }
+        ensure();
+      });
+      a.addEventListener("mousemove", function (e) {
+        ensure();
+        var r = img.getBoundingClientRect();
+        var x = Math.max(0, Math.min(r.width, e.clientX - r.left));
+        var y = Math.max(0, Math.min(r.height, e.clientY - r.top));
+        lens.style.width = lens.style.height = LENS + "px";
+        lens.style.left = (img.offsetLeft + x - LENS / 2) + "px";
+        lens.style.top = (img.offsetTop + y - LENS / 2) + "px";
+        lens.style.backgroundSize = (r.width * ZOOM) + "px " + (r.height * ZOOM) + "px";
+        lens.style.backgroundPosition = (LENS / 2 - x * ZOOM) + "px " + (LENS / 2 - y * ZOOM) + "px";
+        lens.classList.add("is-on");
+      });
+      a.addEventListener("mouseleave", function () { if (lens) lens.classList.remove("is-on"); });
     });
-  });
+  }
 
   /* ---------- 9. Formulário -> WhatsApp ---------- */
   var form = $("[data-contact-form]");

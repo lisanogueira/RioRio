@@ -322,13 +322,13 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
   font-family:var(--ff-display); font-weight:700; font-size:1.15rem; box-shadow:var(--shadow-sm); z-index:1;
 }
 .tl__card{
-  display:grid; grid-template-columns:150px 1fr; gap:1.4rem; align-items:center;
+  display:grid; grid-template-columns:minmax(210px,32%) 1fr; gap:1.6rem; align-items:center;
   background:#fff; border:1px solid var(--linha); border-radius:var(--radius-lg);
   padding:1rem 1.4rem 1rem 1rem; box-shadow:var(--shadow-sm); transition:box-shadow .2s, transform .2s;
 }
 .tl__card:hover{ box-shadow:var(--shadow-md); }
 .tl__fig{ margin:0; }
-.tl__fig img{ width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; background:var(--papel-2); box-shadow:var(--shadow-sm); }
+.tl__fig img{ width:100%; aspect-ratio:1801/2553; object-fit:contain; border-radius:10px; background:#fff; box-shadow:var(--shadow-sm); }
 .tl__years{ font-weight:700; color:var(--rosa); letter-spacing:.04em; margin:0 0 .2rem; font-size:.92rem; }
 .tl__name{ font-size:1.35rem; margin:0 0 .5rem; }
 .tl__text p:last-child{ margin:0; color:var(--tinta-70); }
@@ -691,7 +691,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 
 @media (max-width:900px){
   .tl__card{ grid-template-columns:1fr; }
-  .tl__fig img{ aspect-ratio:16/10; }
+  .tl__fig img{ aspect-ratio:1801/2553; max-width:320px; margin-inline:auto; }
   .tl__item{ padding-left:3.4rem; }
   .tl__line{ left:calc(1.1rem - 1px); }
   .tl__dot{ width:2.2rem; height:2.2rem; font-size:1rem; }
@@ -817,12 +817,23 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .criu-intro{ padding-top:clamp(1.5rem,3vw,2.5rem); }
 .manifesto, .linkout, .closing{ padding-block:clamp(2.4rem,5vw,3.6rem); }
 .tl__fig .tl__zoom{
-  display:block; position:relative; overflow:hidden; border:0; border-radius:12px; background:none; box-shadow:var(--shadow-sm);
-  transform:none; cursor:zoom-in;
+  display:block; position:relative; border:0; border-radius:10px; background:none; box-shadow:none; transform:none; cursor:zoom-in;
 }
-.tl__fig .tl__zoom:hover{ transform:none; }
-.tl__fig .tl__zoom img{ box-shadow:none; border-radius:0; transition:transform .25s var(--ease); transform-origin:var(--zx,50%) var(--zy,50%); }
-@media (hover:hover){ .tl__fig .tl__zoom:hover img{ transform:scale(2); } }
+.tl__fig .tl__zoom:hover{ transform:none; box-shadow:none; }
+.tl__fig .tl__zoom img{ display:block; box-shadow:var(--shadow-sm); }
+.tl__hint{
+  position:absolute; left:.5rem; right:.5rem; bottom:.5rem; text-align:center; padding:.3rem .5rem; border-radius:8px;
+  background:rgba(20,35,59,.86); color:#fff; font-size:.72rem; font-weight:700; letter-spacing:.02em; pointer-events:none;
+  transition:opacity .2s;
+}
+@media (hover:hover){ .tl__hint::after{ content:"Passe o mouse para ampliar"; } }
+@media (hover:none){ .tl__hint::after{ content:"Toque para ver a página inteira"; } }
+.tl__zoom:hover .tl__hint{ opacity:0; }
+.tl__lens{
+  position:absolute; z-index:5; border-radius:50%; pointer-events:none; opacity:0; transition:opacity .12s;
+  background:#fff no-repeat; border:3px solid #fff; box-shadow:0 0 0 1px rgba(20,35,59,.25), 0 10px 28px rgba(20,35,59,.35);
+}
+.tl__lens.is-on{ opacity:1; }
 
 /* ===== reunião 22/10 ===== */
 .caminhos__offer a{
@@ -844,3 +855,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .schools__photos .gallery__link:hover{ transform:none; box-shadow:none; }
 .schools__photos .gallery__link img{ transition:transform .2s var(--ease); }
 .schools__photos .gallery__link:hover img{ transform:scale(1.02) rotate(0); }
+@media (max-width:900px){
+  .tl__fig .tl__zoom{ max-width:320px; margin-inline:auto; }
+  .tl__fig img{ max-width:none; }
+}
