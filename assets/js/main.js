@@ -277,6 +277,15 @@
     });
   });
 
+  /* ---------- 8c. Zoom ao passar o mouse nos quadrinhos da linha do tempo ---------- */
+  $$(".tl__zoom").forEach(function (a) {
+    a.addEventListener("mousemove", function (e) {
+      var r = a.getBoundingClientRect();
+      a.style.setProperty("--zx", ((e.clientX - r.left) / r.width * 100) + "%");
+      a.style.setProperty("--zy", ((e.clientY - r.top) / r.height * 100) + "%");
+    });
+  });
+
   /* ---------- 9. Formulário -> WhatsApp ---------- */
   var form = $("[data-contact-form]");
   if (form) {

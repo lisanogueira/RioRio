@@ -27,7 +27,7 @@
   <!-- LCP: preload the hero cover -->
   <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=23" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=24" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -77,7 +77,7 @@
           <span class="nav__toggle-label">Menu</span>
         </button>
         <ul class="nav__menu" id="nav-menu" data-nav-menu>
-          <li><a href="#livro-imagem">O livro</a></li>
+          <li><a href="#topo">O livro</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#memorias">Acervo</a></li>
           <li><a href="#atividades">Atividades</a></li>
@@ -248,15 +248,17 @@
         </header>
       </div>
 
-      <ol class="tl" data-timeline>
+      <ol class="tl" data-timeline data-gallery>
         <li class="tl__line" aria-hidden="true"><span class="tl__progress" data-tl-progress></span></li>
 
         <li class="tl__item" data-reveal>
           <div class="tl__dot" aria-hidden="true"><span>1</span></div>
           <article class="tl__card">
             <figure class="tl__fig">
-              <img src="assets/images/era1-fundacao.webp" width="460" height="640" loading="lazy" decoding="async"
+              <a class="gallery__link tl__zoom" href="assets/images/era1-fundacao.webp" data-caption="Capítulo 1 · Fundação da cidade (1500–1567)">
+                <img src="assets/images/era1-fundacao.webp" width="460" height="640" loading="lazy" decoding="async"
                    alt="Página do RioRio sobre a fundação da cidade, junto ao Morro Cara de Cão." />
+              </a>
             </figure>
             <div class="tl__text">
               <p class="tl__years">1500 – 1567</p>
@@ -271,8 +273,10 @@
           <div class="tl__dot" aria-hidden="true"><span>2</span></div>
           <article class="tl__card">
             <figure class="tl__fig">
-              <img src="assets/images/era2-expansao.webp" width="460" height="640" loading="lazy" decoding="async"
+              <a class="gallery__link tl__zoom" href="assets/images/era2-expansao.webp" data-caption="Capítulo 2 · Primeira expansão (1567–1808)">
+                <img src="assets/images/era2-expansao.webp" width="460" height="640" loading="lazy" decoding="async"
                    alt="Quadrinho do RioRio: disputas na Guanabara e a expansão colonial." />
+              </a>
             </figure>
             <div class="tl__text">
               <p class="tl__years">1567 – 1808</p>
@@ -287,8 +291,10 @@
           <div class="tl__dot" aria-hidden="true"><span>3</span></div>
           <article class="tl__card">
             <figure class="tl__fig">
-              <img src="assets/images/era3-seculo19.webp" width="460" height="640" loading="lazy" decoding="async"
+              <a class="gallery__link tl__zoom" href="assets/images/era3-seculo19.webp" data-caption="Capítulo 3 · Crescimento urbano do século XIX (1808–1904)">
+                <img src="assets/images/era3-seculo19.webp" width="460" height="640" loading="lazy" decoding="async"
                    alt="Página do RioRio retratando a Praça XV em 1832 e a cidade imperial." />
+              </a>
             </figure>
             <div class="tl__text">
               <p class="tl__years">1808 – 1904</p>
@@ -303,8 +309,10 @@
           <div class="tl__dot" aria-hidden="true"><span>4</span></div>
           <article class="tl__card">
             <figure class="tl__fig">
-              <img src="assets/images/era4-moderna.webp" width="460" height="640" loading="lazy" decoding="async"
+              <a class="gallery__link tl__zoom" href="assets/images/era4-moderna.webp" data-caption="Capítulo 4 · Cidade moderna (1904–1960)">
+                <img src="assets/images/era4-moderna.webp" width="460" height="640" loading="lazy" decoding="async"
                    alt="Quadrinho do RioRio sobre as primeiras estradas de ferro e a cidade moderna." />
+              </a>
             </figure>
             <div class="tl__text">
               <p class="tl__years">1904 – 1960</p>
@@ -319,8 +327,10 @@
           <div class="tl__dot" aria-hidden="true"><span>5</span></div>
           <article class="tl__card">
             <figure class="tl__fig">
-              <img src="assets/images/era5-contemporanea.webp" width="460" height="640" loading="lazy" decoding="async"
+              <a class="gallery__link tl__zoom" href="assets/images/era5-contemporanea.webp" data-caption="Capítulo 5 · Cidade contemporânea (1960–2000)">
+                <img src="assets/images/era5-contemporanea.webp" width="460" height="640" loading="lazy" decoding="async"
                    alt="Página do RioRio sobre o surto migratório e a cidade contemporânea." />
+              </a>
             </figure>
             <div class="tl__text">
               <p class="tl__years">1960 – 2000</p>
@@ -371,10 +381,9 @@
       <div class="wrap schools__inner">
         <div class="schools__head" data-reveal>
           <p class="kicker kicker--light">Para escolas e educadores</p>
-          <h2 class="section-title section-title--light" id="escolas-title">Leve o RioRio para a sua escola</h2>
+          <h2 class="section-title section-title--light" id="escolas-title">Leve o RioRio para a sua escola e os passeios também</h2>
           <p class="section-sub section-sub--light">
-            Um apoio concreto para História e Geografia no Ensino Fundamental — do livro em sala
-            de aula às aulas de campo pela cidade.
+            Direcionado aos educadores: um apoio concreto para o ensino de História e Geografia no Ensino Fundamental — do livro em sala de aula às aulas de campo pela cidade.
           </p>
         </div>
         <ul class="schools__photos" role="list" data-reveal>
@@ -803,7 +812,7 @@
           <li class="gallery__item" data-cat="premios">
             <a class="gallery__link" href="assets/images/premio-iab.webp"
                data-caption="Prêmio do Instituto dos Arquitetos do Brasil (IAB), 1992.">
-              <img src="assets/images/premio-iab.webp" width="542" height="750" loading="lazy" decoding="async" alt="Documento do prêmio do IAB concedido ao RioRio.">
+              <img src="assets/images/premio-iab.webp" width="1041" height="1320" loading="lazy" decoding="async" alt="Documento do prêmio do IAB concedido ao RioRio.">
               <span class="gallery__tag">Prêmio IAB · 1992</span>
             </a>
           </li>
@@ -873,7 +882,7 @@
                   <li class="gallery__item" data-cat="cartas">
             <a class="gallery__link" href="assets/images/acervo/carta-colegio.webp"
                data-caption="Carta de estudantes que adoraram o livro RioRio.">
-              <img src="assets/images/acervo/carta-colegio-t.webp" width="469" height="520" loading="lazy" decoding="async" alt="Carta de estudantes que adoraram o livro RioRio.">
+              <img src="assets/images/acervo/carta-colegio-t.webp" width="432" height="468" loading="lazy" decoding="async" alt="Carta de estudantes que adoraram o livro RioRio.">
               <span class="gallery__tag">Carta de estudantes</span>
             </a>
           </li>
@@ -1035,27 +1044,6 @@
             <a class="gallery__link" href="assets/images/acervo/q-pracaxv.webp"
                data-caption="O Criu Carioca na Praça XV.">
               <img src="assets/images/acervo/q-pracaxv-t.webp" width="350" height="520" loading="lazy" decoding="async" alt="O Criu Carioca na Praça XV.">
-              <span class="gallery__tag">Quadrinho</span>
-            </a>
-          </li>
-          <li class="gallery__item gallery__item--tall" data-cat="quadrinhos">
-            <a class="gallery__link" href="assets/images/acervo/q-bobo.webp"
-               data-caption="Página original do Criu Carioca.">
-              <img src="assets/images/acervo/q-bobo-t.webp" width="344" height="520" loading="lazy" decoding="async" alt="Página original do Criu Carioca.">
-              <span class="gallery__tag">Quadrinho</span>
-            </a>
-          </li>
-          <li class="gallery__item" data-cat="quadrinhos">
-            <a class="gallery__link" href="assets/images/acervo/q-chuva.webp"
-               data-caption="Quadrinho em preto e branco sobre a cidade ao longo dos séculos.">
-              <img src="assets/images/acervo/q-chuva-t.webp" width="520" height="222" loading="lazy" decoding="async" alt="Quadrinho em preto e branco sobre a cidade ao longo dos séculos.">
-              <span class="gallery__tag">Quadrinho</span>
-            </a>
-          </li>
-          <li class="gallery__item" data-cat="quadrinhos">
-            <a class="gallery__link" href="assets/images/acervo/q-prefeito.webp"
-               data-caption="Quadrinho em preto e branco: o Criu conversa com o prefeito Pereira Passos.">
-              <img src="assets/images/acervo/q-prefeito-t.webp" width="520" height="194" loading="lazy" decoding="async" alt="Quadrinho em preto e branco: o Criu conversa com o prefeito Pereira Passos.">
               <span class="gallery__tag">Quadrinho</span>
             </a>
           </li>
@@ -1270,7 +1258,7 @@
       <nav class="site-footer__nav" aria-label="Rodapé">
         <h2>Navegação</h2>
         <ul>
-          <li><a href="#livro-imagem">O livro</a></li>
+          <li><a href="#topo">O livro</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#memorias">Acervo</a></li>
           <li><a href="#atividades">Atividades</a></li>
@@ -1321,6 +1309,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=23" defer></script>
+  <script src="assets/js/main.js?v=24" defer></script>
 </body>
 </html>
