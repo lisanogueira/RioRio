@@ -27,7 +27,7 @@
   <!-- LCP: preload the hero cover -->
   <link rel="preload" as="image" href="assets/images/capa-riorio.webp" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -66,7 +66,7 @@
   <!-- ============================================================= -->
   <header class="site-header" id="topo" data-header>
     <div class="wrap header__inner">
-      <a class="brand" href="#topo" aria-label="RioRio — página inicial">
+      <a class="brand" href="#inicio" aria-label="RioRio — página inicial">
         <span class="brand__mark" aria-hidden="true">RioRio</span>
         <span class="brand__tag">Cidade do Rio para estudantes</span>
       </a>
@@ -77,7 +77,7 @@
           <span class="nav__toggle-label">Menu</span>
         </button>
         <ul class="nav__menu" id="nav-menu" data-nav-menu>
-          <li><a href="#topo">O livro</a></li>
+          <li><a href="#inicio">O livro</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#memorias">Acervo</a></li>
           <li><a href="#atividades">Atividades</a></li>
@@ -94,7 +94,7 @@
     <!-- =========================================================== -->
     <!-- HERO                                                         -->
     <!-- =========================================================== -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__paper" aria-hidden="true"></div>
 
       <!-- linhas desenhadas de fundo -->
@@ -391,6 +391,7 @@
             Direcionado aos educadores: um apoio concreto para o ensino de História e Geografia no Ensino Fundamental — do livro em sala de aula às aulas de campo do projeto Caminhos do Rio.
           </p>
         </div>
+        <h3 class="schools__offer-title" data-reveal>Oferecemos</h3>
         <ul class="schools__photos" role="list" data-reveal data-gallery>
           <li><a class="gallery__link" href="assets/images/passeios/ciep-francisco-7118.webp" data-caption="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja, com o caderno de atividades."><img src="assets/images/passeios/ciep-francisco-7118-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos do CIEP Francisco Cavalcanti Pontes de Miranda em frente à igreja, com o caderno de atividades."></a></li>
           <li><a class="gallery__link" href="assets/images/passeios/cristo.webp" data-caption="Alunos preenchem o caderno de atividades no alto do Corcovado."><img src="assets/images/passeios/cristo-t.webp" width="520" height="390" loading="lazy" decoding="async" alt="Alunos preenchem o caderno de atividades no alto do Corcovado."></a></li>
@@ -400,7 +401,7 @@
         <ul class="schools__grid" role="list" data-reveal>
           <li class="scard"><h3>Adoção do livro</h3><p>RioRio como atividade complementar de História e Geografia, do 3º ao 5º ano.</p></li>
           <li class="scard" id="esc-passeios"><h3>Passeios culturais</h3><p>Dez roteiros de aulas de campo pelo patrimônio histórico e artístico do Rio.</p></li>
-          <li class="scard" id="esc-cadernos"><h3>Cadernos de atividades</h3><p>Material próprio para cada roteiro, idealizado para incentivar o olhar do estudante a descobrir as belezas históricas da cidade.</p></li>
+          <li class="scard" id="esc-cadernos"><h3>Cadernos de atividades</h3><p>Material próprio para cada roteiro, idealizado para incentivar o olhar do estudante a descobrir o patrimônio histórico e artístico da cidade.</p></li>
           <li class="scard" id="esc-orientacao"><h3>Orientação no passeio</h3><p>Acompanhamento da turma durante toda a caminhada, descobrindo juntos as belezas do Rio.</p></li>
           <li class="scard" id="esc-formacao"><h3>Formação de professores</h3><p>Formação do educador para adoção e orientação das aulas de campo sobre a cidade.</p></li>
           <li class="scard" id="esc-novos"><h3>Novos roteiros</h3><p>Construção de percursos sob medida, definidos de acordo com o interesse da escola.</p></li>
@@ -588,7 +589,7 @@
 
         <div class="memorias__media" data-reveal>
           <h3 class="mem__subtitle">Fotografias dos passeios</h3>
-          <p class="mem__subtext">Registros de turmas de escolas da rede pública nos passeios-aula do Caminhos do Rio.</p>
+          <p class="mem__subtext">Registros de turmas de escolas da rede pública nos passeios-aula do Caminhos do Rio. Clique para ampliar.</p>
           <div class="chips" role="group" aria-label="Filtrar as fotos dos passeios" data-filter-group="passeios-grid">
             <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Todas</button>
             <button class="chip" type="button" data-filter="centro" aria-pressed="false">Centro histórico e igrejas</button>
@@ -857,10 +858,10 @@
               <span class="gallery__tag">Quadrinho</span>
             </a>
           </li>
-          <li class="gallery__item" data-cat="quadrinhos">
-            <a class="gallery__link" href="assets/images/comic-transferencia.webp"
-               data-caption="Página original do livro RioRio sobre a transferência e o crescimento da cidade.">
-              <img src="assets/images/comic-transferencia.webp" width="420" height="594" loading="lazy" decoding="async" alt="Página original do livro RioRio sobre a transferência da cidade.">
+          <li class="gallery__item gallery__item--tall" data-cat="quadrinhos">
+            <a class="gallery__link" href="assets/images/acervo/q-dompedro.webp"
+               data-caption="Página original do livro RioRio: o Criu Carioca conversa com Dom Pedro II sobre as melhorias que ele trouxe ao Rio.">
+              <img src="assets/images/acervo/q-dompedro-t.webp" width="359" height="520" loading="lazy" decoding="async" alt="Página em quadrinhos do livro RioRio em que o Criu Carioca conversa com Dom Pedro II.">
               <span class="gallery__tag">Quadrinho</span>
             </a>
           </li>
@@ -871,10 +872,10 @@
               <span class="gallery__tag">Quadrinho</span>
             </a>
           </li>
-          <li class="gallery__item" data-cat="quadrinhos">
-            <a class="gallery__link" href="assets/images/comic-criu-historia.webp"
-               data-caption="Página original do livro RioRio sobre a história do próprio Criu Carioca.">
-              <img src="assets/images/comic-criu-historia.webp" width="420" height="594" loading="lazy" decoding="async" alt="Página original do livro RioRio sobre a evolução do Criu Carioca ao longo das edições.">
+          <li class="gallery__item gallery__item--tall" data-cat="quadrinhos">
+            <a class="gallery__link" href="assets/images/acervo/q-edificios.webp"
+               data-caption="Página original do livro RioRio: os edifícios de apartamentos e a ocupação dos morros pelas moradias populares.">
+              <img src="assets/images/acervo/q-edificios-t.webp" width="357" height="520" loading="lazy" decoding="async" alt="Página em quadrinhos do livro RioRio com os edifícios da cidade e as casas nos morros.">
               <span class="gallery__tag">Quadrinho</span>
             </a>
           </li>
@@ -1122,7 +1123,7 @@
     <section class="linkout" id="historia-para-todos" aria-labelledby="linkout-title">
       <div class="wrap linkout__inner" data-reveal>
         <p class="kicker kicker--center">Continue a viagem</p>
-        <h2 class="section-title" id="linkout-title">Conheça o História do Rio para Todos</h2>
+        <h2 class="section-title" id="linkout-title">Conheça a História do Rio para todos</h2>
         <p class="lede">
           Um projeto irmão do RioRio: um site dedicado a contar a história da Cidade do Rio de
           Janeiro para todos os públicos, com linhas do tempo, mapas históricos e imagens da
@@ -1264,7 +1265,7 @@
       <nav class="site-footer__nav" aria-label="Rodapé">
         <h2>Navegação</h2>
         <ul>
-          <li><a href="#topo">O livro</a></li>
+          <li><a href="#inicio">O livro</a></li>
           <li><a href="#caminhos">Caminhos do Rio</a></li>
           <li><a href="#memorias">Acervo</a></li>
           <li><a href="#atividades">Atividades</a></li>
@@ -1315,6 +1316,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=28" defer></script>
+  <script src="assets/js/main.js?v=29" defer></script>
 </body>
 </html>

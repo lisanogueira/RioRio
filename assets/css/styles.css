@@ -346,11 +346,7 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 .criu-intro__inner{ --gap:clamp(2rem,5vw,4rem); gap:var(--gap); }
 /* linha que liga o passarinho ao título, sem encostar na palavra */
 .criu-intro__body .section-title{ position:relative; }
-.criu-intro__body .section-title::before{
-  content:""; position:absolute; right:100%; margin-right:.55rem; top:.1em; height:1.5rem; width:calc(var(--gap) + 1.4rem);
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Cpath d='M5 25 L90 9' stroke='%23C11F5B' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='4' cy='25' r='2.3' fill='%23C11F5B'/%3E%3Cpath d='M83.3 5.1 L94 7.6 L85.1 13.9' stroke='%23C11F5B' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") no-repeat right center / 100% 100%;
-}
-@media (max-width:900px){ .criu-intro__body .section-title::before{ display:none; } }
+
 .quotes{ list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:.9rem; }
 .quotes__item{
   font-family:var(--ff-display); font-style:italic; font-size:1.2rem; color:var(--tinta);
@@ -858,4 +854,13 @@ section{ padding-block:clamp(3.5rem, 8vw, 6.5rem); position:relative; }
 @media (max-width:900px){
   .tl__fig .tl__zoom{ max-width:320px; margin-inline:auto; }
   .tl__fig img{ max-width:none; }
+}
+
+/* ===== correções de 23/10 ===== */
+.archive, .activities{ padding-top:clamp(1.5rem,3vw,2.4rem); }
+.linkout{ padding-top:clamp(1.2rem,2.5vw,2rem); }
+.memorias, .archive, .activities{ padding-bottom:clamp(2rem,4vw,3rem); }
+.schools__offer-title{
+  font-family:var(--ff-display); font-weight:600; font-size:clamp(1.5rem,1.1rem + 1.6vw,2.1rem); color:#fff;
+  text-align:center; margin:0 0 1rem;
 }
